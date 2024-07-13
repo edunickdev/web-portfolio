@@ -1,4 +1,4 @@
-import { Image } from "@nextui-org/react";
+import { Image } from "@nextui-org/react"; 
 import { statics } from "../../../config/images";
 
 const FooterComponent = () => {

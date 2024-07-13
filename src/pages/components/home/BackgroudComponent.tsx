@@ -1,4 +1,4 @@
-import { statics } from "../../../config/images";
+import { statics } from "../../../config/images"; 
 
 const BackgroundComponentHome = () => {
   return (

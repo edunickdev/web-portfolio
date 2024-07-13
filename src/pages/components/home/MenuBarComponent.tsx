@@ -1,4 +1,4 @@
-import { Link } from "@nextui-org/react";
+import { Link } from "@nextui-org/react"; 
 
 const MenuBarComponent = () => {
     const currentRoute: string = window.location.pathname;
