@@ -1,4 +1,4 @@
-import MenuBarComponent from "../components/home/MenuBarComponent";
+import MenuBarComponent from "../shared/MenuBarComponent";
 
 const ExperienceScreen = () => {
     return (

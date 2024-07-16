@@ -1,11 +1,11 @@
 import BackgroundComponentHome from "../components/home/BackgroudComponent";
 import HeaderProfileComponent from "../components/home/HeaderProfileComponent";
-import MenuBarComponent from "../components/home/MenuBarComponent";
+import MenuBarComponent from "../shared/MenuBarComponent";
 import FooterComponent from "../components/home/FooterComponent";
 
 const HomeScreen = () => {
   return (
-      <div className="grid grid-cols-12 ">
+      <div className="grid grid-cols-12">
         <BackgroundComponentHome />
         <div className="col-span-1 h-screen"></div>
         <div className="col-span-10 flex flex-col justify-center items-center h-screen">
