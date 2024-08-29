@@ -4,11 +4,13 @@ import AboutMeScreen from '../../pages/screens/AboutMeScreen';
 import MyProjectsScreen from '../../pages/screens/MyProjectsScreen';
 import ExperienceScreen from '../../pages/screens/ExperienceScreen';
 import NotFoundScreen from '../../pages/screens/404screen';
+import TemplateScreen from '../../pages/screens/TemplateScreen';
 
 
 const MyRoutes = () => {
-    return (
-      <Router>
+  return (
+    <Router>
+      <TemplateScreen>
         <Routes>
           <Route path="/" element={<HomeScreen />} />
           <Route path="/about" element={<AboutMeScreen />} />
@@ -16,9 +18,10 @@ const MyRoutes = () => {
           <Route path="/experience" element={<ExperienceScreen />} />
           <Route path="*" element={<NotFoundScreen />} />
         </Routes>
-      </Router>
-    );
-    }
+      </TemplateScreen>
+    </Router>
+  );
+}
 
 export default MyRoutes;
 
