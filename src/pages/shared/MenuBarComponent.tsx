@@ -7,7 +7,7 @@ const MenuBarComponent = () => {
 
   return (
       <div
-        className={`h-24 bg-darkblue w-[44rem] rounded-3xl flex items-center justify-around my-10 shadow-lg shadow-gray-400 transition-all duration-700  ${
+        className={`h-20 bg-darkblue w-[42rem] rounded-3xl flex items-center justify-around my-10 shadow-lg shadow-gray-400 transition-all duration-700  ${
           isHome ? "transform -translate-y-1/2" : "bottom-0"
         }`}
       >
