@@ -1,47 +1,51 @@
-import { Image } from "@nextui-org/react"; 
+import { Image } from "@nextui-org/react";
 import { statics } from "../../../config/images";
 
 const FooterComponent = () => {
   return (
-    <div className="flex -mt-32 ">
-      <div className="w-4/6 h-40 rounded-lg m-2"></div>
-      <div className="h-40 rounded-lg gap-2">
-        <div className="flex gap-3">
-          <h2 className="text-3xl font-bold text-darkblue text-center -ml-24">
+    <div className="grid grid-cols-10 overflow-hidden md:-mb-16">
+      <div className="col-span-6"></div>
+      <div className="col-span-4 -z-20">
+        <div className="flex gap-x-3 justify-around items-end">
+          <h2 className="text-2xl lg:text-3xl font-bold text-darkblue text-center -ml-24">
             Main Technologies:
           </h2>
-          <Image src={statics.mongoicon} alt="mongodb-ECR" width={250} />
+          <Image
+            src={statics.mongoicon}
+            alt="mongodb-ECR"
+            className="w-auto h-10 lg:h-20"
+          />
         </div>
-        <div className="flex my-5 gap-5 justify-center items-center">
+        <div className="flex my-2 lg:my-4 gap-x-5 justify-center items-center">
           <Image
             radius="none"
-            width={190}
             src={statics.fastapiicon}
             alt="fastapi-ECR"
+            className="w-full h-8 lg:h-12"
           />
           <Image
             radius="none"
-            width={150}
             src={statics.djangoicon}
             alt="django-ECR"
+            className="w-full h-8 lg:h-14"
           />
         </div>
-        <div className="flex my-5 gap-5 justify-center items-center">
+        <div className="flex my-2 lg:my-4 gap-x-5 justify-center items-center">
           <Image
             radius="none"
-            width={110}
             src={statics.angularicon}
             alt="angular-ECR"
+            className="h-20 lg:h-24"
           />
           <Image
             radius="none"
-            width={110}
+            className="h-20 lg:h-24"
             src={statics.reacticon}
             alt="react-ECR"
           />
           <Image
             radius="none"
-            width={70}
+            className="h-20 lg:h-24"
             src={statics.fluttericon}
             alt="flutter-ECR"
           />
