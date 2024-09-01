@@ -13,6 +13,8 @@ import minibgicon1 from '../assets/images/mini1about.png'
 import minibgicon2 from '../assets/images/mini2about.png'
 import minibgicon3 from '../assets/images/mini3about.png'
 import minibgicon4 from '../assets/images/mini4about.png'
+import minibgprojects1 from '../assets/images/mini1projects.png'
+import minibgprojects2 from '../assets/images/mini2projects.png'
 
 export const statics = {
     mongoicon: mongoicon,
@@ -30,4 +32,6 @@ export const statics = {
     minibgicon2: minibgicon2,
     minibgicon3: minibgicon3,
     minibgicon4: minibgicon4,
+    minibgprojects1: minibgprojects1,
+    minibgprojects2: minibgprojects2
 } 
