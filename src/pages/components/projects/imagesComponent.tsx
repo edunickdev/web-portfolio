@@ -6,12 +6,7 @@ import { useState } from "react";
 const ImageComponents = (project: Project) => {
   const [currentImage, setCurrentImage] = useState(0);
 
-  const images: string[] = [
-    project && project.main_image,
-    project && project.other_images[0].first_img.url,
-    project && project.other_images[0].second_image.url,
-    project && project.other_images[0].third_image.url,
-  ];
+  const images = [project.main_image, ...project.other_images];
 
   const goToNextImage = () => {
     if (currentImage === images.length - 1) {

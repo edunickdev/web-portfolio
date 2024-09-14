@@ -39,7 +39,11 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
           title: project.data.title[0].text,
           link_repo: project.data.link_repo.url,
           main_image: project.data.main_image.url,
-          other_images: project.data.other_images,
+          other_images: [
+            project.data.other_images[0].first_img.url,
+            project.data.other_images[0].second_image.url,
+            project.data.other_images[0].third_image.url,
+          ],
           technologies: techs,
           name: project.data.title[0].text,
           description: project.data.desciption[0].text,
