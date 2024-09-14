@@ -45,7 +45,7 @@ const AboutMeScreen = () => {
             </motion.li>
           ))}
         </ul>
-        <div className="ml-8 lg:ml-16 flex gap-x-10 items-center mt-[9.2rem]">
+        <div className="ml-8 lg:ml-16 flex gap-x-10 items-center mt-[9.1rem]">
           <h2 className="text-darkblue font-extrabold text-xl">SOME HOBBIES</h2>
           <div className="flex gap-x-3 lg:gap-x-8">
             {hobbies.map((hobbie, index) => (

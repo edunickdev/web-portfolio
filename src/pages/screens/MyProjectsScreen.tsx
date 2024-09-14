@@ -14,7 +14,7 @@ const MyProjectsScreen = () => {
   useEffect(() => {
     getApiKey();
     fetchProjects();
-  }, [getApiKey]);
+  }, [projects]);
 
   return (
     <div className="grid grid-cols-12">
