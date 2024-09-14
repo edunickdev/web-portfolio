@@ -14,37 +14,37 @@ const MenuBarComponent = () => {
       {location.pathname === "/" ? (
         <>
           <Link to="/about" className="text-white px-8 py-4 text-2xl">
-            About me
+            Sobre mí
           </Link>
           <Link to="/experience" className="text-white px-8 py-4 text-2xl">
-            Experience
+            Experiencia
           </Link>
           <Link to="/projects" className="text-white px-8 py-4 text-2xl">
-            Projects
+            Proyectos
           </Link>
         </>
       ) : location.pathname === "/about" ? (
         <>
           <Link to="/" className="text-white text-2xl">
-            Home
+            Inicio
           </Link>
           <Link to="/experience" className="text-white px-8 py-6 text-2xl">
-            Experience
+            Experiencia
           </Link>
           <Link to="/projects" className="text-white px-8 py-6 text-2xl">
-            Projects
+            Proyectos
           </Link>
         </>
       ) : location.pathname === "/projects" ? (
         <>
           <Link to="/" className="text-white px-8 py-6 text-2xl">
-            Home
+            Inicio
           </Link>
           <Link to="/about" className="text-white px-8 py-6 text-2xl">
-            About me
+            Sobre mí
           </Link>
           <Link to="/experience" className="text-white px-8 py-6 text-2xl">
-            Experience
+            Experiencia
           </Link>
         </>
       ) : (

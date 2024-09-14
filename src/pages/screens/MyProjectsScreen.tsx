@@ -20,7 +20,7 @@ const MyProjectsScreen = () => {
     <div className="grid grid-cols-12">
       <ProjectsBGComponent />
       <div className="col-span-1 h-screen"></div>
-      <div className="col-span-10 flex justify-around items-start h-screen py-10 px-5 gap-x-3 -mt-5">
+      <div className="col-span-10 flex justify-around items-start h-screen py-10 px-5 gap-x-4 -mt-4">
         {!isLoading ? (
           <Spinner
             label="Preparando los proyectos"
