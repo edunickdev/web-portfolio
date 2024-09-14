@@ -21,42 +21,40 @@ const AboutMeScreen = () => {
   return (
     <div className="grid grid-cols-12">
       <AboutBGComponent />
-      <div className="col-span-10 flex flex-col justify-around items-start h-screen py-5 lg:py-10">
-        <div className="flex items-center gap-x-4 text-darkblue font-bold">
+      <div className="col-span-10 flex flex-col justify-start items-start gap-y-10 pt-5">
+        <div className="flex items-center gap-x-14 text-darkblue font-bold">
           <Image
             src={statics.fotoPerfil}
             alt=""
-            className="min-w-24 w-24 lg:w-32 rounded-2xl shadow-md shadow-darkblue"
+            className="min-w-20 w-20 lg:w-24 rounded-2xl shadow-md shadow-darkblue"
           />
           <h2 className="text-2xl">
             EDUARD NICOLÁS <br /> SARMIENTO HERRERA
           </h2>
         </div>
-        <ul className="text-darkblue text-lg lg:text-xl -mt-20 lg:-mt-7">
+        <ul className="w-full text-darkblue text-lg lg:text-xl">
           {topics.map((topic, index) => (
             <motion.li
               key={index}
               initial={{ opacity: 0, x: 60 }}
               animate={{ opacity: 1, x: 60 }}
               transition={{ delay: 0.4 + index / 10 }}
-              className="mb-4 lg:mb-5"
+              className="mb-2 lg:mb-3"
             >
               {topic}
             </motion.li>
           ))}
         </ul>
-        <div className="ml-8 lg:ml-16 flex gap-x-10 items-center">
-          <h2 className="text-darkblue font-extrabold text-xl lg:text-2xl -mb-10 md:-mb-14 lg:-mb-16">
-            SOME HOBBIES
-          </h2>
-          <div className="flex gap-x-3 lg:gap-x-8 -mb-[3.5rem] lg:-mb-14">
+        <div className="ml-8 lg:ml-16 flex gap-x-10 items-center mt-[6rem]">
+          <h2 className="text-darkblue font-extrabold text-xl">SOME HOBBIES</h2>
+          <div className="flex gap-x-3 lg:gap-x-8">
             {hobbies.map((hobbie, index) => (
               <motion.span
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 + index / 10 }}
-                className="bg-midblue py-4 px-1 lg:px-6 rounded-lg font-semibold text-center self-center shadow-lg w-28 md:w-40"
+                className="bg-midblue py-3 px-1 lg:px-6 rounded-lg font-semibold text-center self-center shadow-lg w-28 md:w-40"
               >
                 {hobbie}
               </motion.span>

@@ -18,7 +18,7 @@ const DetailProjectComponent = (project: Project) => {
       <motion.button
         onClick={onOpen}
         key={project.id_project}
-        className="flex flex-col justify-start items-center w-1/3 h-[360px] bg-gradient-to-tr from-lightblue to-midblue rounded-2xl shadow-lg shadow-midblue hover:shadow-xl hover:shadow-midblue my-10 overflow-hidden transition-all duration-400 cursor-pointer"
+        className="flex flex-col justify-start items-center w-1/3 h-[330px] bg-gradient-to-tr from-lightblue to-midblue rounded-2xl shadow-lg shadow-midblue hover:shadow-xl hover:shadow-midblue my-10 overflow-hidden transition-all duration-400 cursor-pointer"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 + parseInt(project.id_project) / 8 }}
@@ -27,13 +27,13 @@ const DetailProjectComponent = (project: Project) => {
           radius="none"
           src={project.main_image}
           alt=""
-          className="w-full h-[15.3rem] object-cover "
+          className="w-full h-[14rem] object-cover "
         />
-        <div className="px-5 py-2">
+        <div className="px-5 py-1">
           <h2 className="text-darkblue font-bold text-lg lg:text-xl">
             {project.title}
           </h2>
-          <div className="flex gap-3 flex-wrap mt-[0.18rem]">
+          <div className="flex gap-1 flex-wrap mt-[0.18rem]">
             {project.technologies.map((tech, index) => (
               <motion.span
                 key={index}
@@ -59,7 +59,7 @@ const DetailProjectComponent = (project: Project) => {
               </ModalHeader>
               <ModalBody>
                 <div className="flex flex-col">
-                  <div className="flex gap-3 flex-wrap justify-center">
+                  <div className="flex gap-2 flex-wrap justify-center">
                     {project.technologies.map((tech, index) => (
                       <span
                         key={index}
