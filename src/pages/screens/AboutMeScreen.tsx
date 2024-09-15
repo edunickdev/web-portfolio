@@ -27,7 +27,7 @@ const AboutMeScreen = () => {
   return (
     <div className="grid grid-cols-12 h-screen justify-center items-start">
       <AboutBGComponent />
-      <div className="col-span-10 flex flex-col mt-20">
+      <div className="col-span-10 flex flex-col mt-10">
         <div className="flex items-center gap-x-14 text-darkblue font-bold">
           <Image
             src={statics.fotoPerfil}
@@ -47,7 +47,7 @@ const AboutMeScreen = () => {
           >
             {(item) => (
               <Tab key={item.id} title={item.label}>
-                <Card className="h-56">
+                <Card className="h-52">
                   <CardBody>{item.content}</CardBody>
                 </Card>
               </Tab>

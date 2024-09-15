@@ -1,9 +1,17 @@
 import { Image } from "@nextui-org/react";
 import { statics } from "../../../config/images";
 import { useProjects } from "../../../stores/stores";
+import { useEffect } from "react";
 
 const CerticationInfoComponent = () => {
   const courses = useProjects((state) => state.platzi_courses);
+  const fetchCourses = useProjects((state) => state.fetchProjects);
+  const getApiKey = useProjects((state) => state.fetchAPIKey);
+
+  useEffect(() => {
+    getApiKey();
+    fetchCourses();
+  }, [courses]);
 
   return (
     <div className="flex gap-2">
