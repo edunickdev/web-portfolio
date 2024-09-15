@@ -12,6 +12,7 @@ export const useNavMenu = create<menuInterface>((set) => ({
 
 export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
   projects: [],
+  platzi_courses: [],
   apiKey: "",
   baseUrl: "https://ecrprojects.cdn.prismic.io/api/v2",
   loading: false,
@@ -22,7 +23,28 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
       `${get().baseUrl}/documents/search?ref=${currentKey}`
     );
 
-    const projects = response.data.results.map(
+    const filteredProjects = response.data.results.filter(
+      (project: { type: string }) => project.type === "project"
+    );
+
+    const filteredCourses = response.data.results.filter(
+      (project: { type: string }) => project.type === "platzicourses"
+    );
+
+    const courses = filteredCourses.map(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (course: any) => {
+        const newCourse = {
+          id_course: course.id,
+          title: course.data.title_course[0].text,
+          image_url: course.data.logo_course.url,
+          alt_data: course.data.alt_data[0].text,
+        };
+        return newCourse;
+      }
+    );
+
+    const projects = filteredProjects.map(
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (project: any) => {
         const techs = [];
@@ -52,6 +74,8 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
         return newProject;
       }
     );
+
+    set({ platzi_courses: courses });
     set({ projects });
     set({ loading: true });
   },

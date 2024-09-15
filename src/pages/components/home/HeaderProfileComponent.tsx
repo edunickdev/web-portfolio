@@ -7,7 +7,7 @@ const HeaderProfileComponent = () => {
   const lastnames = "SARMIENTO HERRERA".split(" ");
 
   return (
-    <div className="flex items-center justify-center gap-x-16 mt-8">
+    <div className="flex items-center justify-center gap-x-16 pt-8">
       <div className="flex flex-col">
         <div className="flex">
           <motion.h2

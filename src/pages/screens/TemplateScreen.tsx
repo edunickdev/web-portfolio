@@ -14,24 +14,22 @@ const TemplateScreen: React.FC<TemplateScreenProps> = ({ children }) => {
 
   return (
     <div className="grid grid-cols-12">
-        <div className="col-span-1 h-screen"></div>
-          <motion.div
-            initial={{ y: isHome ? "50vh" : "-14vh", x: "-50%" }}
-            animate={{ y: isHome ? "50vh" : "-14vh", x: "-50%" }}
-            transition={{ type: "tween", stiffness: 300, ease: "easeInOut" }}
-            style={{
-              position: "fixed",
-              left: "50%",
-              transform: "translateX(-50%)",
-              bottom: isHome ? "auto" : 0,
-            }}
-          >
-            <MenuBarComponent />
-          </motion.div>
-          <div className="col-span-10">
-            {children}
-          </div>
-        <div className="col-span-1 h-screen"></div>
+      <div className="col-span-1 h-screen"></div>
+      <motion.div
+        initial={{ y: isHome ? "50vh" : "-13vh", x: "-50%" }}
+        animate={{ y: isHome ? "50vh" : "-13vh", x: "-50%" }}
+        transition={{ type: "tween", stiffness: 300, ease: "easeInOut" }}
+        style={{
+          position: "fixed",
+          left: "50%",
+          transform: "translateX(-50%)",
+          bottom: isHome ? "auto" : 0,
+        }}
+      >
+        <MenuBarComponent />
+      </motion.div>
+      <div className="col-span-10">{children}</div>
+      <div className="col-span-1 h-screen"></div>
     </div>
   );
 };

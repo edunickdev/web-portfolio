@@ -50,13 +50,13 @@ const MenuBarComponent = () => {
       ) : (
         <>
           <Link to="/" className="text-white px-8 py-6 text-2xl">
-            Home
+            Inicio
           </Link>
           <Link to="/about" className="text-white px-8 py-6 text-2xl">
-            About me
+            Sobre mí
           </Link>
           <Link to="/projects" className="text-white px-8 py-6 text-2xl">
-            Projects
+            Proyectos
           </Link>
         </>
       )}

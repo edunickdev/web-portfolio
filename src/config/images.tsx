@@ -17,6 +17,8 @@ import minibgprojects1 from "../assets/images/mini1projects.png";
 import minibgprojects2 from "../assets/images/mini2projects.png";
 import flechaSiguiente from "../assets/icons/siguiente.png";
 import flechaAnterior from "../assets/icons/volver.png";
+import az104 from "../assets/images/AZ104.png";
+import az305 from "../assets/images/AZ305.png";
 
 export const statics = {
   mongoicon: mongoicon,
@@ -38,4 +40,6 @@ export const statics = {
   minibgprojects2: minibgprojects2,
   flechaSiguiente: flechaSiguiente,
   flechaAnterior: flechaAnterior,
+  az104: az104,
+  az305: az305,
 };

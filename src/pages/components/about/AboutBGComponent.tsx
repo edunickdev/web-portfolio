@@ -10,7 +10,7 @@ const AboutBGComponent = () => {
   ];
 
   return (
-    <div className="absolute inset-0 flex justify-between flex-col min-h-screen -z-30 col-span-12 overflow-hidden -mt-16">
+    <div className="absolute inset-0 flex justify-between flex-col h-screen -z-30 col-span-12 overflow-hidden bg-blue-50">
       <img src={statics.bgicon1} alt="" className="self-end w-1/5" />
       <div className="">
         {images.map((image, index) => (
