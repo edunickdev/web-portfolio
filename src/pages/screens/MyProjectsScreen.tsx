@@ -12,6 +12,9 @@ const MyProjectsScreen = () => {
   const getApiKey = useProjects((state) => state.fetchAPIKey);
 
   useEffect(() => {
+    if (projects.length > 0) {
+      return;
+    }
     getApiKey();
     fetchProjects();
   }, [projects]);

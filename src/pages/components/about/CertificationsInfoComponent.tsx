@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Image } from "@nextui-org/react";
 import { statics } from "../../../config/images";
 import { useProjects } from "../../../stores/stores";
@@ -9,6 +10,9 @@ const CerticationInfoComponent = () => {
   const getApiKey = useProjects((state) => state.fetchAPIKey);
 
   useEffect(() => {
+    if (courses.length > 0) {
+      return;
+    }
     getApiKey();
     fetchCourses();
   }, [courses]);
