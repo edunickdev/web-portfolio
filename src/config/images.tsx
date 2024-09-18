@@ -1,4 +1,4 @@
-import mongoicon from "../assets/images/mongodb.jpeg";
+import mongoicon from "../assets/images/mongodb.png";
 import angularicon from "../assets/images/angular.png";
 import reacticon from "../assets/images/react.png";
 import fluttericon from "../assets/images/fluttericon.png";
