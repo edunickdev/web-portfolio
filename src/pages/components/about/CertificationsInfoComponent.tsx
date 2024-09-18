@@ -54,7 +54,7 @@ const CerticationInfoComponent = () => {
           </motion.div>
         ))}
       </div>
-      {/* <div className="w-[20rem] flex flex-col items-center">
+      <div className="w-[20rem] flex flex-col items-center">
         <h2 className="text-darkblue text-2xl font-semibold">
           Otras Palataformas
         </h2>
@@ -70,7 +70,7 @@ const CerticationInfoComponent = () => {
             <p className="text-center w-[15rem]">{course.title}</p>
           </motion.div>
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };
