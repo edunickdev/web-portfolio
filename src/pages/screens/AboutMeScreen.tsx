@@ -1,4 +1,4 @@
-import { Card, CardBody, Image, Tab, Tabs } from "@nextui-org/react";
+import { Image, Tab, Tabs } from "@nextui-org/react";
 import { statics } from "../../config/images";
 import AboutBGComponent from "../components/about/AboutBGComponent";
 import HobbiesComponent from "../components/about/HobbiesComponent";
