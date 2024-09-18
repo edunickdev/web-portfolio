@@ -48,7 +48,7 @@ const AboutMeScreen = () => {
           >
             {(item) => (
               <Tab key={item.id} title={item.label}>
-                <div className="mt-5 p-y-5 h-[14rem] xl:h-80 overflow-y-scroll">
+                <div className="mt-5 h-[14rem] xl:h-80">
                   {item.content}
                 </div>
               </Tab>
