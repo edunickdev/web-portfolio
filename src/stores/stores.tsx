@@ -13,15 +13,24 @@ export const useNavMenu = create<menuInterface>((set) => ({
 export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
   projects: [],
   platzi_courses: [],
+  other_courses: [],
   apiKey: "",
   baseUrl: "https://ecrprojects.cdn.prismic.io/api/v2",
   loading: false,
   fetchProjects: async () => {
+    if (get().platzi_courses.length > 0) {
+      return;
+    }
+
+    get().fetchAPIKey();
+
     const currentKey = get().apiKey;
 
     const response = await axios.get(
       `${get().baseUrl}/documents/search?ref=${currentKey}`
     );
+
+    console.log(response.data.results);
 
     const filteredProjects = response.data.results.filter(
       (project: { type: string }) => project.type === "project"
@@ -29,6 +38,23 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
 
     const filteredCourses = response.data.results.filter(
       (project: { type: string }) => project.type === "platzicourses"
+    );
+
+    const otherCourses = response.data.results.filter(
+      (project: { type: string }) => project.type === "others-platform"
+    );
+
+    const others = otherCourses.map(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (course: any) => {
+        const newCourse = {
+          id_course: course.id,
+          title: course.data.title_course[0].text,
+          image_url: course.data.logo_course.url,
+          alt_data: course.data.alt_data[0].text,
+        };
+        return newCourse;
+      }
     );
 
     const courses = filteredCourses.map(
@@ -75,6 +101,7 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
       }
     );
 
+    set({ other_courses: others });
     set({ platzi_courses: courses });
     set({ projects });
     set({ loading: true });

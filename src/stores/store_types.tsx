@@ -13,6 +13,7 @@ export interface Projects {
   apiKey: string;
   projects: Project[];
   platzi_courses: PlatziCourses[];
+  other_courses: PlatziCourses[];
   baseUrl: string;
   loading: boolean;
 }

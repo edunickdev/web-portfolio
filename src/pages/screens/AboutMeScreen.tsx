@@ -21,6 +21,11 @@ const AboutMeScreen = () => {
       label: "Certificaciones destacadas",
       content: <CerticationInfoComponent />,
     },
+    // {
+    //   id: "Estudios Formales",
+    //   label: "Estudios formales",
+    //   content: <CerticationInfoComponent />,
+    // },
   ];
 
   return (
@@ -35,6 +40,7 @@ const AboutMeScreen = () => {
           items={tabs}
           size="md"
           variant="underlined"
+          color="primary"
           className="col-span-12 mt-5"
         >
           {(item) => (

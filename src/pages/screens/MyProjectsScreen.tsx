@@ -9,13 +9,8 @@ const MyProjectsScreen = () => {
   const projects = useProjects((state) => state.projects);
   const isLoading = useProjects((state) => state.loading);
   const fetchProjects = useProjects((state) => state.fetchProjects);
-  const getApiKey = useProjects((state) => state.fetchAPIKey);
 
   useEffect(() => {
-    if (projects.length > 0) {
-      return;
-    }
-    getApiKey();
     fetchProjects();
   }, [projects]);
 

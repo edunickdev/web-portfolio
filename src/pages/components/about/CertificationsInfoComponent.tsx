@@ -7,14 +7,12 @@ import { motion } from "framer-motion";
 
 const CerticationInfoComponent = () => {
   const courses = useProjects((state) => state.platzi_courses);
+  const others = useProjects((state) => state.other_courses);
   const fetchCourses = useProjects((state) => state.fetchProjects);
-  const getApiKey = useProjects((state) => state.fetchAPIKey);
+
+  console.log(others);
 
   useEffect(() => {
-    if (courses.length > 0) {
-      return;
-    }
-    getApiKey();
     fetchCourses();
   }, [courses]);
 
@@ -49,13 +47,30 @@ const CerticationInfoComponent = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6 + index / 10 }}
             key={course.id_course}
-            className="flex gap-1 w-[17rem] h-16 items-center justify-start"
+            className="flex gap-1 w-[17rem] h-[5rem] items-center justify-start"
           >
             <Image src={course.image_url} width={50} />
             <p className="text-center w-[15rem]">{course.title}</p>
           </motion.div>
         ))}
       </div>
+      {/* <div className="w-[20rem] flex flex-col items-center">
+        <h2 className="text-darkblue text-2xl font-semibold">
+          Otras Palataformas
+        </h2>
+        {others.map((course, index) => (
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.8 + index / 10 }}
+            key={course.id_course}
+            className="flex gap-1 w-[17rem] h-[5rem] items-center justify-start"
+          >
+            <Image src={course.image_url} width={50} />
+            <p className="text-center w-[15rem]">{course.title}</p>
+          </motion.div>
+        ))}
+      </div> */}
     </div>
   );
 };
