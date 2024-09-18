@@ -47,7 +47,7 @@ const AboutMeScreen = () => {
           >
             {(item) => (
               <Tab key={item.id} title={item.label}>
-                <Card className="h-44 xl:h-80">
+                <Card className="h-44">
                   <CardBody>{item.content}</CardBody>
                 </Card>
               </Tab>
