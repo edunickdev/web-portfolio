@@ -44,12 +44,13 @@ const AboutMeScreen = () => {
             items={tabs}
             radius="md"
             color="primary"
+            size="md"
           >
             {(item) => (
               <Tab key={item.id} title={item.label}>
-                <Card className="h-44">
-                  <CardBody>{item.content}</CardBody>
-                </Card>
+                <div className="mt-5 p-y-10 lg:h-80 overflow-y-scroll">
+                  {item.content}
+                </div>
               </Tab>
             )}
           </Tabs>
