@@ -23,7 +23,6 @@
   transform: translate(72%, -33%);
 }
 
-
 .ecriconh3 {
   width: 400px;
   display: block;
@@ -34,4 +33,22 @@
       3px 5px 2px rgba(0, 0, 0, 0.8)
   );
   transform: translate(-10%, 5%);
+}
+
+@media screen and (max-width: 768px) {
+  .ecriconh1 {
+    width: 300px;
+    transform: translate(-65%, -53%);
+  }
+
+  .ecriconh2 {
+    width: 300px;
+    transform: translate(72%, -33%);
+  }
+
+  .ecriconh3 {
+    width: 300px;
+    transform: translate(-45%, 55%);
+  }
+  
 }

@@ -10,14 +10,12 @@ const CerticationInfoComponent = () => {
   const others = useProjects((state) => state.other_courses);
   const fetchCourses = useProjects((state) => state.fetchProjects);
 
-  console.log(others);
-
   useEffect(() => {
     fetchCourses();
   }, [courses]);
 
   return (
-    <div className={`flex gap-2 h-auto max-h-56`}>
+    <div className="flex gap-2 h-auto max-h-56">
       <div className="flex flex-col w-[18rem]">
         <h2 className="text-blue-500 text-2xl font-semibold text-center py-1">
           Microsoft Azure

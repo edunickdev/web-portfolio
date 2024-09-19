@@ -31,8 +31,8 @@ const AboutMeScreen = () => {
   return (
     <div className="grid grid-cols-12 h-screen justify-center items-start">
       <AboutBGComponent />
-      <div className="col-span-12 grid grid-cols-12 mt-10">
-        <h2 className="col-span-12 text-4xl text-center text-darkblue font-bold py-2">
+      <div className="col-span-12 grid grid-cols-12 mt-5 md:mt-10">
+        <h2 className="col-span-12 text-2xl md:text-4xl text-center text-darkblue font-bold py-2">
           Sobre mí
         </h2>
         <Tabs
@@ -41,15 +41,15 @@ const AboutMeScreen = () => {
           size="md"
           variant="underlined"
           color="primary"
-          className="col-span-12 mt-5"
+          className="col-span-12 mt-1 md:mt-5"
         >
           {(item) => (
             <Tab
               key={item.id}
               title={item.label}
-              className="text-lg col-span-12"
+              className="text-sm md:text-lg col-span-12"
             >
-              <div className="h-auto max-h-56 xl:h-80 rounded-xl p-3 flex justify-center items-center">
+              <div className="h-5/6 md:max-h-56 xl:h-80 rounded-xl p-3 flex justify-center items-center overflow-y-scroll -ml-14">
                 {item.content}
               </div>
             </Tab>

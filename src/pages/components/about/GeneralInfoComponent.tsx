@@ -9,7 +9,7 @@ const GeneralInfoComponent = () => {
   ];
 
   return (
-    <div className="text-darkblue text-lg flex flex-wrap gap-4 -ml-28">
+    <div className="text-darkblue text-medium md:text-lg flex flex-wrap gap-4 md:-ml-28 h-72 mt-14 md:mt-0">
       {topics.map((topic, index) => (
         <motion.span
           key={index}

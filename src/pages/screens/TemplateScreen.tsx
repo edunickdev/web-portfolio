@@ -14,7 +14,7 @@ const TemplateScreen: React.FC<TemplateScreenProps> = ({ children }) => {
 
   return (
     <div className="grid grid-cols-12">
-      <div className="col-span-1 h-screen"></div>
+      <div className="md:col-span-1 md:h-screen"></div>
       <motion.div
         initial={{ y: isHome ? "50vh" : "-13vh", x: "-50%" }}
         animate={{ y: isHome ? "50vh" : "-13vh", x: "-50%" }}
@@ -29,7 +29,7 @@ const TemplateScreen: React.FC<TemplateScreenProps> = ({ children }) => {
         <MenuBarComponent />
       </motion.div>
       <div className="col-span-10">{children}</div>
-      <div className="col-span-1 h-screen"></div>
+      <div className="hidden md:col-span-1 md:h-screen"></div>
     </div>
   );
 };
