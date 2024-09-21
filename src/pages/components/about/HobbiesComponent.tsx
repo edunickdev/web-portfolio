@@ -19,7 +19,7 @@ const HobbiesComponent = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 + index / 10 }}
-          className="bg-midblue py-3 px-1 lg:px-6 rounded-lg font-semibold text-center self-center shadow-lg w-[17rem]"
+          className="bg-midblue py-1 md:py-3 px-3 md:px-1 lg:px-6 rounded-lg font-semibold text-center self-center shadow-lg w-[17rem]"
           style={{ width: "fit-content" }}
         >
           {hobbie}

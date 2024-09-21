@@ -34,7 +34,10 @@ const MenuBarComponent = () => {
         </>
       ) : location.pathname === "/about" ? (
         <>
-          <Link to="/" className="text-white text-medium md:text-2xl">
+          <Link
+            to="/"
+            className="text-white py-2 md:py-0 text-medium md:text-2xl"
+          >
             Inicio
           </Link>
           <Link
@@ -52,25 +55,43 @@ const MenuBarComponent = () => {
         </>
       ) : location.pathname === "/projects" ? (
         <>
-          <Link to="/" className="text-white px-8 py-6 text-2xl">
+          <Link
+            to="/"
+            className="text-white px-8 py-2 md:py-6 text-medium md:text-2xl "
+          >
             Inicio
           </Link>
-          <Link to="/about" className="text-white px-8 py-6 text-2xl">
+          <Link
+            to="/about"
+            className="text-white px-8 py-2 md:py-6 text-medium md:text-2xl"
+          >
             Sobre mí
           </Link>
-          <Link to="/experience" className="text-white px-8 py-6 text-2xl">
+          <Link
+            to="/experience"
+            className="text-white px-8 py-2 md:py-6 text-medium md:text-2xl"
+          >
             Experiencia
           </Link>
         </>
       ) : (
         <>
-          <Link to="/" className="text-white px-8 py-6 text-2xl">
+          <Link
+            to="/"
+            className="text-white px-8 py-2 md:py-6 text-medium md:text-2xl"
+          >
             Inicio
           </Link>
-          <Link to="/about" className="text-white px-8 py-6 text-2xl">
+          <Link
+            to="/about"
+            className="text-white px-8 py-2 md:py-6 text-medium md:text-2xl"
+          >
             Sobre mí
           </Link>
-          <Link to="/projects" className="text-white px-8 py-6 text-2xl">
+          <Link
+            to="/projects"
+            className="text-white px-8 py-2 md:py-6 text-medium md:text-2xl"
+          >
             Proyectos
           </Link>
         </>

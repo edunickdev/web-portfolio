@@ -29,7 +29,7 @@ const AboutMeScreen = () => {
   ];
 
   return (
-    <div className="grid grid-cols-12 h-screen justify-center items-start">
+    <div className="grid grid-cols-12 h-auto md:h-screen justify-center items-start">
       <AboutBGComponent />
       <div className="col-span-12 grid grid-cols-12 mt-5 md:mt-10">
         <h2 className="col-span-12 text-2xl md:text-4xl text-center text-darkblue font-bold py-2">
@@ -49,7 +49,7 @@ const AboutMeScreen = () => {
               title={item.label}
               className="text-sm md:text-lg col-span-12"
             >
-              <div className="h-5/6 md:max-h-56 xl:h-80 rounded-xl p-3 flex justify-center items-center overflow-y-scroll -ml-14">
+              <div className="h-5/6 md:h-auto md:max-h-56 xl:h-80 rounded-xl p-3 flex justify-center items-center">
                 {item.content}
               </div>
             </Tab>

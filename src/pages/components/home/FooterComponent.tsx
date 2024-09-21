@@ -8,7 +8,7 @@ const FooterComponent = () => {
       <div className="col-span-10 md:col-span-4 -z-20">
         <div className="flex gap-x-3 justify-around items-end">
           <h2 className="text-xl lg:text-3xl font-bold text-darkblue text-center md:-ml-24">
-            Main Technologies:
+            Principales Tecnologías:
           </h2>
           <Image src={statics.mongoicon} alt="mongodb-ECR" width={135} />
         </div>

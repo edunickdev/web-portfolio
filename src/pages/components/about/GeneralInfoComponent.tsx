@@ -9,14 +9,14 @@ const GeneralInfoComponent = () => {
   ];
 
   return (
-    <div className="text-darkblue text-medium md:text-lg flex flex-wrap gap-4 md:-ml-28 h-72 mt-14 md:mt-0">
+    <div className="text-darkblue text-medium md:text-lg flex flex-wrap gap-2 md:gap-4 -ml-14 md:-ml-28 h-72 mt-7 md:mt-0">
       {topics.map((topic, index) => (
         <motion.span
           key={index}
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 60 }}
           transition={{ delay: 0.4 + index / 10 }}
-          className="bg-lightblue py-3 px-1 lg:px-6 rounded-lg font-semibold text-center self-center shadow-lg w-[17rem]"
+          className="bg-lightblue text-small md:text-lg py-1 md:py-3 px-1 lg:px-6 rounded-lg font-semibold text-center self-center shadow-lg w-[17rem]"
         >
           {topic}
         </motion.span>
