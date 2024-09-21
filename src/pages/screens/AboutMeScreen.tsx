@@ -49,9 +49,7 @@ const AboutMeScreen = () => {
               title={item.label}
               className="text-sm md:text-lg col-span-12"
             >
-              <div className="h-5/6 md:h-auto md:max-h-56 xl:h-80 rounded-xl p-3 flex justify-center items-center">
-                {item.content}
-              </div>
+              <div className="h-auto">{item.content}</div>
             </Tab>
           )}
         </Tabs>

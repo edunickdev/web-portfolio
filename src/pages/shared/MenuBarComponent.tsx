@@ -36,7 +36,7 @@ const MenuBarComponent = () => {
         <>
           <Link
             to="/"
-            className="text-white py-2 md:py-0 text-medium md:text-2xl"
+            className="text-white px-8 py-2 md:py-0 text-medium md:text-2xl"
           >
             Inicio
           </Link>

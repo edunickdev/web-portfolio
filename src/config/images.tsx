@@ -19,6 +19,7 @@ import flechaSiguiente from "../assets/icons/siguiente.png";
 import flechaAnterior from "../assets/icons/volver.png";
 import az104 from "../assets/images/AZ104.png";
 import az305 from "../assets/images/AZ305.png";
+import dp203 from "../assets/images/DP203.png";
 
 export const statics = {
   mongoicon: mongoicon,
@@ -42,4 +43,5 @@ export const statics = {
   flechaAnterior: flechaAnterior,
   az104: az104,
   az305: az305,
+  dp203: dp203,
 };
