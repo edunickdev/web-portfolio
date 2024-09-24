@@ -54,7 +54,7 @@ const CerticationInfoComponent = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6 + index / 10 }}
             key={course.id_course}
-            className="flex gap-x-1 gap-y-2 w-full items-center justify-start"
+            className="flex gap-x-1 gap-y-1 md:gap-y-2 w-full items-center justify-start"
           >
             <Image src={course.image_url} className="w-[35px] md:w-[50px]" />
             <p className="text-left text-xs md:text-base w-[15rem]">
@@ -64,7 +64,7 @@ const CerticationInfoComponent = () => {
         ))}
       </div>
       <div className="flex flex-col items-start md:items-center w-full">
-        <h2 className="text-darkblue text-lg md:text-2xl font-bold pb-2">
+        <h2 className="text-darkblue text-lg md:text-2xl font-bold md:pb-2">
           Otras Palataformas
         </h2>
         {others.map((course, index) => (
@@ -73,7 +73,7 @@ const CerticationInfoComponent = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8 + index / 10 }}
             key={course.id_course}
-            className="flex gap-x-1 md:w-[17rem] gap-y-2 items-center justify-start"
+            className="flex gap-x-1 md:w-[17rem] gap-y-1 md:gap-y-2 items-center justify-start"
           >
             <Image src={course.image_url} className="w-[35px] md:w-[50px]" />
             <p className="text-center text-xs md:text-base md:text-left md:w-[15rem]">

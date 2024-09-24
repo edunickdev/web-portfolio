@@ -3,6 +3,7 @@ import AboutBGComponent from "../components/about/AboutBGComponent";
 import HobbiesComponent from "../components/about/HobbiesComponent";
 import CerticationInfoComponent from "../components/about/CertificationsInfoComponent";
 import GeneralInfoComponent from "../components/about/GeneralInfoComponent";
+import FormalStudiesComponent from "../components/about/FormalStudiesComponent";
 
 const AboutMeScreen = () => {
   const tabs = [
@@ -12,20 +13,20 @@ const AboutMeScreen = () => {
       content: <GeneralInfoComponent />,
     },
     {
-      id: "Hobbies",
-      label: "Hobbies",
-      content: <HobbiesComponent />,
+      id: "Estudios Formales",
+      label: "Estudios formales",
+      content: <FormalStudiesComponent />,
     },
     {
       id: "Certificaciones",
       label: "Certificaciones destacadas",
       content: <CerticationInfoComponent />,
     },
-    // {
-    //   id: "Estudios Formales",
-    //   label: "Estudios formales",
-    //   content: <CerticationInfoComponent />,
-    // },
+    {
+      id: "Hobbies",
+      label: "Hobbies",
+      content: <HobbiesComponent />,
+    },
   ];
 
   return (

@@ -20,6 +20,9 @@ import flechaAnterior from "../assets/icons/volver.png";
 import az104 from "../assets/images/AZ104.png";
 import az305 from "../assets/images/AZ305.png";
 import dp203 from "../assets/images/DP203.png";
+import logopoli from "../assets/images/logopoli.jpg";
+import uislogo from "../assets/images/uislogo.png";
+import misiontic from "../assets/images/misionticlogo.png";
 
 export const statics = {
   mongoicon: mongoicon,
@@ -44,4 +47,7 @@ export const statics = {
   az104: az104,
   az305: az305,
   dp203: dp203,
+  logopoli: logopoli,
+  uislogo: uislogo,
+  misiontic: misiontic,
 };
