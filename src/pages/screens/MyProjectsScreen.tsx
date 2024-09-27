@@ -14,6 +14,10 @@ const MyProjectsScreen = () => {
     fetchProjects();
   }, [projects]);
 
+  const rangeIndex = 3;
+
+  
+
   return (
     <div className="grid grid-cols-12">
       <ProjectsBGComponent />
