@@ -37,7 +37,7 @@ const DetailProjectComponent = (project: Project) => {
       <motion.button
         onClick={onOpen}
         key={project.id_project}
-        className="flex flex-col justify-start items-center w-1/3 h-[350px] bg-gradient-to-tr from-lightblue to-midblue rounded-2xl shadow-lg shadow-midblue hover:shadow-xl hover:shadow-midblue my-10 overflow-hidden transition-all duration-400 cursor-pointer"
+        className="flex flex-col justify-start items-center w-56 md:w-72 h-[300px] md:h-[350px] bg-gradient-to-tr from-lightblue to-midblue rounded-2xl shadow-lg shadow-midblue hover:shadow-xl hover:shadow-midblue my-10 overflow-hidden transition-all duration-400 cursor-pointer"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1 + parseInt(project.id_project) / 8 }}
@@ -46,13 +46,13 @@ const DetailProjectComponent = (project: Project) => {
           radius="none"
           src={project.main_image}
           alt=""
-          className="w-full h-[15rem] object-cover "
+          className="w-full h-[10rem] md:h-[15rem] object-cover "
         />
         <div className="px-5 py-1">
           <h2 className="text-darkblue font-bold text-lg lg:text-xl">
             {project.title}
           </h2>
-          <div className="flex gap-1 flex-wrap mt-[0.18rem]">
+          <div className="flex gap-1 flex-wrap mt-[0.15rem]">
             {project.technologies.map((tech, index) => (
               <motion.span
                 key={index}
@@ -69,7 +69,7 @@ const DetailProjectComponent = (project: Project) => {
           </div>
         </div>
       </motion.button>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="5xl">
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="4xl">
         <ModalContent>
           {() => (
             <>

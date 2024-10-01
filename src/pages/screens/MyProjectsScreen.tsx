@@ -16,8 +16,6 @@ const MyProjectsScreen = () => {
 
   const rangeIndex = 3;
 
-  
-
   return (
     <div className="grid grid-cols-12">
       <ProjectsBGComponent />
@@ -30,9 +28,15 @@ const MyProjectsScreen = () => {
             className="w-full h-full -z-20"
           />
         ) : (
-          projects.map((project) => (
-            <DetailProjectComponent key={project.id_project} {...project} />
-          ))
+          projects.slice(0, rangeIndex).map(
+            (project) => (
+              <DetailProjectComponent key={project.id_project} {...project} />
+            )
+            // (
+            //   projects.map((project) => (
+            //     <DetailProjectComponent key={project.id_project} {...project} />
+            //   ))
+          )
         )}
       </div>
       <div className="col-span-1 h-screen"></div>

@@ -25,8 +25,8 @@ const ImageComponents = (project: Project) => {
   };
 
   return (
-    <div className="flex flex-col h-[28rem]">
-      <div className="flex mt-3 justify-around items-center">
+    <div className="flex flex-col h-[20rem] md:h-[25rem]">
+      <div className="flex mt-1 justify-around items-center">
         <Image
           src={statics.flechaAnterior}
           onClick={goToPreviousImage}
@@ -35,7 +35,7 @@ const ImageComponents = (project: Project) => {
         <Image
           src={images[currentImage]}
           alt=""
-          className="w-full h-[28rem] object-cover mx-auto"
+          className="w-full h-[19rem] md:h-[23rem] object-cover mx-auto"
         />
         <Image
           src={statics.flechaSiguiente}
