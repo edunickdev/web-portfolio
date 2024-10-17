@@ -57,10 +57,10 @@ const DetailProjectComponent = (project: Project) => {
               <motion.span
                 key={index}
                 className="bg-darkblue rounded-xl text-lightgray px-2 py-1 text-sm font-semibold"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  delay: 0.1 / 3 + index,
+                  delay: 0.03 + index,
                 }}
               >
                 {tech}

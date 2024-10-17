@@ -16,7 +16,7 @@ const HeaderProfileComponent = () => {
             transition={{ delay: 0.1 }}
             className="text-medium md:text-3xl font-bold text-darkblue text-center mr-2"
           >
-            INGENÍERO DE
+            INGENÍERO
           </motion.h2>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -24,7 +24,7 @@ const HeaderProfileComponent = () => {
             transition={{ delay: 0.2 }}
             className="text-medium md:text-3xl font-bold text-darkblue text-center"
           >
-            SOFTWARE
+            DESARROLLADOR
           </motion.h2>
         </div>
         <motion.h2
@@ -33,7 +33,7 @@ const HeaderProfileComponent = () => {
           transition={{ delay: 0.3 }}
           className="text-medium md:text-3xl font-bold text-darkblue text-center"
         >
-          FULLSTACK
+          DE SOFTWARE
         </motion.h2>
       </div>
       <Image
