@@ -104,7 +104,7 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
     set({ other_courses: others });
     set({ platzi_courses: courses });
     set({ projects });
-    set({ loading: !get().loading });
+    set({ loading: true });
   },
   fetchAPIKey: () => {
     axios

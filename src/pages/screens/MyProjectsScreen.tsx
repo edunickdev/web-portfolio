@@ -46,7 +46,7 @@ const MyProjectsScreen = () => {
         </Button>
       </div>
       <div className="col-span-10 flex justify-around items-start h-screen py-10 px-5 gap-x-4 -mt-4">
-        {!isLoading && projects.length === 0 ? (
+        {isLoading && projects.length === 0 ? (
           <Spinner
             label="Preparando los proyectos"
             color="primary"
