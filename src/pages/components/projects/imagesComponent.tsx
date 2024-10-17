@@ -35,7 +35,7 @@ const ImageComponents = (project: Project) => {
         <Image
           src={images[currentImage]}
           alt=""
-          className="w-full h-[19rem] md:h-[23rem] object-cover mx-auto"
+          className="w-full h-[19rem] md:h-[25rem] object-cover mx-auto"
         />
         <Image
           src={statics.flechaSiguiente}

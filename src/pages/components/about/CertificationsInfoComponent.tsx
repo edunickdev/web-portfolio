@@ -15,7 +15,7 @@ const CerticationInfoComponent = () => {
   }, [courses]);
 
   return (
-    <div className="flex flex-col md:flex-row  h-auto">
+    <div className="flex flex-col md:flex-row h-auto">
       <div className="flex md:flex-col items-start md:items-center w-full gap-x-2 md:gap-x-0">
         <h2 className="text-blue-500 text-lg md:text-2xl font-bold text-center pb-2">
           Microsoft Azure
@@ -54,7 +54,7 @@ const CerticationInfoComponent = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6 + index / 10 }}
             key={course.id_course}
-            className="flex gap-x-1 gap-y-1 md:gap-y-2 w-full items-center justify-start"
+            className="flex gap-x-1 gap-y-1 md:gap-y-2 w-full items-center justify-center"
           >
             <Image src={course.image_url} className="w-[35px] md:w-[50px]" />
             <p className="text-left text-xs md:text-base w-[15rem]">

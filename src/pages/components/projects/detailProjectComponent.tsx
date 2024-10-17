@@ -38,15 +38,15 @@ const DetailProjectComponent = (project: Project) => {
         onClick={onOpen}
         key={project.id_project}
         className="flex flex-col justify-start items-center w-56 md:w-72 h-[300px] md:h-[350px] bg-gradient-to-tr from-lightblue to-midblue rounded-2xl shadow-lg shadow-midblue hover:shadow-xl hover:shadow-midblue my-10 overflow-hidden transition-all duration-400 cursor-pointer"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 0 }}
+        animate={{ opacity: 1, y: 5 }}
         transition={{ delay: 1 + parseInt(project.id_project) / 8 }}
       >
         <Image
           radius="none"
           src={project.main_image}
           alt=""
-          className="w-full h-[10rem] md:h-[15rem] object-cover "
+          className="w-full h-[10rem] md:h-[15rem] object-cover"
         />
         <div className="px-5 py-1">
           <h2 className="text-darkblue font-bold text-lg lg:text-xl">
@@ -60,7 +60,7 @@ const DetailProjectComponent = (project: Project) => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  delay: 0.1 / 5 + index,
+                  delay: 0.1 / 3 + index,
                 }}
               >
                 {tech}
@@ -78,11 +78,11 @@ const DetailProjectComponent = (project: Project) => {
               </ModalHeader>
               <ModalBody>
                 <Tabs aria-label="sections" items={tabs} color="primary">
-                  {(item) => (
-                    <Tab key={item.id} title={item.label}>
+                  {(tab) => (
+                    <Tab key={tab.id} title={tab.label}>
                       <Card>
                         <CardBody className="bg-gray-200">
-                          {item.content}
+                          {tab.content}
                         </CardBody>
                       </Card>
                     </Tab>
