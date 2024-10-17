@@ -25,7 +25,6 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
     get().fetchAPIKey();
 
     const currentKey = get().apiKey;
-    
 
     const response = await axios.get(
       `${get().baseUrl}/documents/search?ref=${currentKey}`
@@ -105,7 +104,7 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
     set({ other_courses: others });
     set({ platzi_courses: courses });
     set({ projects });
-    set({ loading: true });
+    set({ loading: !get().loading });
   },
   fetchAPIKey: () => {
     axios
