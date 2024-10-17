@@ -30,8 +30,6 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
       `${get().baseUrl}/documents/search?ref=${currentKey}`
     );
 
-    console.log(response.data.results);
-
     const filteredProjects = response.data.results.filter(
       (project: { type: string }) => project.type === "project"
     );
