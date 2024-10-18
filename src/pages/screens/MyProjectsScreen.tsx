@@ -106,7 +106,7 @@ const MyProjectsScreen = () => {
           <IoMdArrowRoundBack />
         </Button>
       </div>
-      <div className="col-span-10 flex justify-around items-start h-screen py-10 px-5 gap-x-4 -mt-4">
+      <div className="col-span-10 flex justify-around items-start h-screen py-10 md:px-5 gap-x-4 pt-10 md:-mt-4">
         {isLoading && projects.length === 0 ? (
           <div className="flex flex-col justify-center items-center mt-10">
             <Spinner

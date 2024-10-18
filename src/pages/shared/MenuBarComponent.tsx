@@ -1,9 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
+import { useProjects } from "../../stores/stores";
+import { useEffect } from "react";
 
 const MenuBarComponent = () => {
   const location = useLocation();
 
   const isHome = location.pathname === "/";
+
+  const fetchProjects = useProjects((state) => state.fetchProjects);
+
+  useEffect(() => {
+    fetchProjects();
+  }, [fetchProjects]);
 
   return (
     <div

@@ -11,8 +11,10 @@ const CerticationInfoComponent = () => {
   const fetchCourses = useProjects((state) => state.fetchProjects);
 
   useEffect(() => {
-    fetchCourses();
-  }, [courses]);
+    if (courses.length === 0) {
+      fetchCourses();
+    }
+  }, [courses.length, fetchCourses]);
 
   return (
     <div className="flex flex-col md:flex-row h-auto">

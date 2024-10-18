@@ -12,6 +12,8 @@ import {
   Tab,
   Card,
   CardBody,
+  ModalFooter,
+  Button,
 } from "@nextui-org/react";
 import ImageComponents from "./imagesComponent";
 import DescriptionComponent from "./descriptionComponent";
@@ -69,12 +71,22 @@ const DetailProjectComponent = (project: Project) => {
           </div>
         </div>
       </motion.button>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="4xl">
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="full">
         <ModalContent>
           {() => (
             <>
-              <ModalHeader className="flex text-darkblue justify-center gap-x-4 text-3xl items-center">
+              <ModalHeader className="flex text-darkblue justify-center gap-x-20 text-3xl items-center">
                 <h2>{project.title}</h2>
+                <span>
+                  <a
+                    href={project.link_repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-midblue text-xl font-semibold hover:underline"
+                  >
+                    Ver repositorio de GitHub
+                  </a>
+                </span>
               </ModalHeader>
               <ModalBody>
                 <Tabs aria-label="sections" items={tabs} color="primary">
@@ -89,6 +101,15 @@ const DetailProjectComponent = (project: Project) => {
                   )}
                 </Tabs>
               </ModalBody>
+              <ModalFooter className="flex justify-end items-center">
+                Oprime la tecla "Esc" o presiona el botón para cerrar
+                <Button
+                  className="bg-darkblue text-white px-4 py-2 rounded-xl"
+                  onClick={onOpenChange}
+                >
+                  Cerrar
+                </Button>
+              </ModalFooter>
             </>
           )}
         </ModalContent>
