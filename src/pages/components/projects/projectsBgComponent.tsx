@@ -2,7 +2,7 @@ import { statics } from "../../../config/images";
 
 const ProjectsBGComponent = () => {
   return (
-    <div className="absolute inset-0 flex justify-between flex-col min-h-screen -z-30 col-span-12 overflow-hidden">
+    <div className="absolute inset-0 flex justify-between flex-col min-h-screen -z-30 col-span-12 overflow-hidden bg-blue-50">
       <img
         src={statics.minibgprojects1}
         alt=""
