@@ -11,25 +11,21 @@ const useIsMobile = (breakpoint: number = 768) => {
   const [isMobile, setIsMobile] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
-    // Verificar que `window` está disponible
     if (typeof window !== "undefined") {
       const mediaQuery = window.matchMedia(`(max-width: ${breakpoint}px)`);
 
-      // Establecer el estado inicial
       setIsMobile(mediaQuery.matches);
 
       const handler = (event: MediaQueryListEvent) => {
         setIsMobile(event.matches);
       };
 
-      // Añadir listener
       mediaQuery.addEventListener("change", handler);
 
       return () => {
         mediaQuery.removeEventListener("change", handler);
       };
     } else {
-      // Si `window` no está definido (SSR), asumir que no es móvil
       setIsMobile(false);
     }
   }, [breakpoint]);
@@ -51,14 +47,12 @@ const MyProjectsScreen = () => {
     }
   }, [projects.length, fetchProjects]);
 
-  // Ajustar la cantidad de proyectos visibles según el dispositivo
   useEffect(() => {
     if (isMobile === undefined || projects.length === 0) return;
 
     if (isMobile) {
-      setVisibleProjects([0]); // Solo un proyecto si es móvil
+      setVisibleProjects([0]);
     } else {
-      // Mostrar hasta tres proyectos si hay suficientes
       const indexes = projects.slice(0, 3).map((_, index) => index);
       setVisibleProjects(indexes);
     }
@@ -88,9 +82,8 @@ const MyProjectsScreen = () => {
     });
   };
 
-  // Esperar a que `isMobile` esté definido antes de renderizar
   if (isMobile === undefined) {
-    return null; // O puedes mostrar un indicador de carga
+    return null;
   }
 
   return (
