@@ -39,7 +39,7 @@ const DetailProjectComponent = (project: Project) => {
       <motion.button
         onClick={onOpen}
         key={project.id_project}
-        className="flex flex-col justify-start items-center w-56 md:w-72 h-[300px] md:h-[350px] bg-gradient-to-tr from-lightblue to-midblue rounded-2xl shadow-lg shadow-midblue hover:shadow-xl hover:shadow-midblue my-10 overflow-hidden transition-all duration-400 cursor-pointer"
+        className="flex flex-col justify-start items-center w-56 md:w-72 h-[300px] md:h-[350px] bg-gradient-to-tr from-lightblue to-midblue rounded-2xl shadow-md shadow-gray-300 hover:shadow-lg hover:shadow-midblue my-5 md:my-10 overflow-hidden transition-all duration-400 cursor-pointer"
         initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: 5 }}
         transition={{ delay: 1 + parseInt(project.id_project) / 8 }}
@@ -62,7 +62,7 @@ const DetailProjectComponent = (project: Project) => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  delay: 0.03 + index,
+                  delay: 0.1 * index,
                 }}
               >
                 {tech}
@@ -75,14 +75,14 @@ const DetailProjectComponent = (project: Project) => {
         <ModalContent>
           {() => (
             <>
-              <ModalHeader className="flex text-darkblue justify-center gap-x-20 text-3xl items-center">
-                <h2>{project.title}</h2>
-                <span>
+              <ModalHeader className="flex text-darkblue justify-center gap-x-10 md:gap-x-20 text-3xl items-center">
+                <h2 className="text-medium md:text-2xl">{project.title}</h2>
+                <span className="text-center ">
                   <a
                     href={project.link_repo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-midblue text-xl font-semibold hover:underline"
+                    className="text-midblue text-medium md:text-xl font-semibold hover:underline"
                   >
                     Ver repositorio de GitHub
                   </a>

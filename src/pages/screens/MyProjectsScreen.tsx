@@ -94,9 +94,14 @@ const MyProjectsScreen = () => {
   }
 
   return (
-    <div className="grid grid-cols-12">
+    <div className="grid grid-cols-12 max-h-screen">
       <ProjectsBGComponent />
-      <div className="col-span-1 h-screen flex items-center justify-center">
+      <div className="col-span-12 flex items-center justify-center mt-5">
+        <h1 className="text-medium md:text-2xl text-darkblue font-bold text-center">
+          Selecciona el proyecto del que quieres conocer más.
+        </h1>
+      </div>
+      <div className="col-span-1 flex items-start md:items-center mt-40 md:mt-0 justify-center">
         <Button
           isIconOnly
           size="lg"
@@ -106,7 +111,7 @@ const MyProjectsScreen = () => {
           <IoMdArrowRoundBack />
         </Button>
       </div>
-      <div className="col-span-10 flex justify-around items-start h-screen py-10 md:px-5 gap-x-4 pt-10 md:-mt-4">
+      <div className="col-span-10 flex justify-around items-start py-5 md:py-10 md:px-5 gap-x-4 pt-1 md:pt-0 md:-mt-4">
         {isLoading && projects.length === 0 ? (
           <div className="flex flex-col justify-center items-center mt-10">
             <Spinner
@@ -132,7 +137,7 @@ const MyProjectsScreen = () => {
           ))
         )}
       </div>
-      <div className="col-span-1 h-screen flex items-center justify-center">
+      <div className="col-span-1 flex items-start md:items-center mt-40 md:mt-0 justify-center">
         <Button
           isIconOnly
           size="lg"

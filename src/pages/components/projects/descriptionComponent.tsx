@@ -15,7 +15,7 @@ const DescriptionComponent = (project: Project) => {
         ))}
       </div>
 
-      <p className="text-xl">{project.description}</p>
+      <p className="text-medium md:text-lg">{project.description}</p>
     </div>
   );
 };

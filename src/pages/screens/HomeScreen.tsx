@@ -5,7 +5,7 @@ import FooterComponent from "../components/home/FooterComponent";
 
 const HomeScreen = () => {
   return (
-    <div className="col-span-10 flex flex-col justify-around h-screen">
+    <div className="col-span-10 flex flex-col justify-around min-h-screen max-h-screen">
       <BackgroundComponentHome />
       <HeaderProfileComponent />
       <FooterComponent />
