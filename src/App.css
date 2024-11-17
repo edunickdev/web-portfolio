@@ -52,3 +52,13 @@
   }
   
 }
+
+@font-face {
+  font-family: 'k2d';
+  src: url('../assets/fonts/K2D-Bold.ttf') format('ttf'),
+      url('../assets/fonts/K2D-Medium.ttf') format('ttf'),
+      url('../assets/fonts/K2D-Regular.ttf') format('ttf'),
+      url('../assets/fonts/K2D-SemiBold.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+}

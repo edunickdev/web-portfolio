@@ -1,14 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import BackgroundComponentHome from "../components/home/BackgroudComponent";
 import HeaderProfileComponent from "../components/home/HeaderProfileComponent";
-import FooterComponent from "../components/home/FooterComponent";
 
-const HomeScreen = () => {
+const HomeScreen = ({ refs }: { refs: Record<string, React.RefObject<HTMLDivElement>> }) => {
   return (
-    <div className="col-span-10 flex flex-col justify-around min-h-screen max-h-screen">
-      <BackgroundComponentHome />
-      <HeaderProfileComponent />
-      <FooterComponent />
+    <div className="col-span-10 flex flex-col justify-around h-[88vh] bg-darkblue">
+        <HeaderProfileComponent refs={refs} />
     </div>
   );
 };

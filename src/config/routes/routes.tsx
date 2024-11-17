@@ -1,24 +1,33 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomeScreen from '../../pages/screens/HomeScreen';
-import AboutMeScreen from '../../pages/screens/AboutMeScreen';
-import MyProjectsScreen from '../../pages/screens/MyProjectsScreen';
-import ExperienceScreen from '../../pages/screens/ExperienceScreen';
-import NotFoundScreen from '../../pages/screens/404screen';
-import TemplateScreen from '../../pages/screens/TemplateScreen';
+import MenuBarComponent from '../../pages/shared/MenuBarComponent';
+import React, { useRef } from 'react';
 
 
 const MyRoutes = () => {
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const studiesRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = (section: string) => {
+    const refMap: Record<string, React.RefObject<HTMLDivElement>> = {
+      about: aboutRef,
+      projects: projectsRef,
+      studies: studiesRef,
+    }
+    refMap[section]?.current?.scrollIntoView({  behavior: 'smooth' });
+  }
+
   return (
     <Router>
-      <TemplateScreen>
+      <MenuBarComponent onScroll={handleScroll} />
         <Routes>
-          <Route path="/" element={<HomeScreen />} />
-          <Route path="/about" element={<AboutMeScreen />} />
-          <Route path="/projects" element={<MyProjectsScreen />} />
-          <Route path="/experience" element={<ExperienceScreen />} />
-          <Route path="*" element={<NotFoundScreen />} />
+          <Route path="/" element={<HomeScreen refs={{
+            about: aboutRef,
+            projects: projectsRef,
+            studies: studiesRef,
+          }} />} />
         </Routes>
-      </TemplateScreen>
     </Router>
   );
 }

@@ -13,6 +13,12 @@ export default {
         midblue: "#71B7E9",
         lightgray: "#D9D9D9",
       },
+      fontFamily: {
+        k2dR: ["K2D-Regular", "sans-serif"],
+        k2dM: ["K2D-Medium", "sans-serif"],
+        k2dB: ["K2D-Bold", "sans-serif"],
+        k2dSB: ["K2D-SemiBold", "sans-serif"],
+      }
     },
   },
   darkMode: "class",

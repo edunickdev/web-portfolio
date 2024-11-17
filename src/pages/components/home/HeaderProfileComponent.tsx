@@ -1,75 +1,53 @@
 import { statics } from "../../../config/images";
-import { motion } from "framer-motion";
 import { Image } from "@nextui-org/react";
 
-const HeaderProfileComponent = () => {
-  const names = "EDUARD NICOLÁS".split(" ");
-  const lastnames = "SARMIENTO HERRERA".split(" ");
+const HeaderProfileComponent = ({ refs }: { refs: Record<string, React.RefObject<HTMLDivElement>> }) => {
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center gap-y-1 md:gap-x-16 -mt-12 md:-mt-0 md:pt-8">
-      <div className="flex flex-col">
-        <div className="flex">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-medium md:text-3xl font-bold text-darkblue text-center mr-2"
-          >
-            INGENÍERO
-          </motion.h2>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-medium md:text-3xl font-bold text-darkblue text-center"
-          >
-            DESARROLLADOR
-          </motion.h2>
-        </div>
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="text-medium md:text-3xl font-bold text-darkblue text-center"
-        >
-          DE SOFTWARE
-        </motion.h2>
+    <div className="flex md:grid md:grid-cols-12 h-full p-10 text-lightblue">
+      <div className="col-span-1"></div>
+      <div className="col-span-6">
+        <section className="flex" ref={refs.about}>
+          <Image src={statics.fotoPerfil} className="w-24 h-32 mt-4" />
+          <div className="w-auto h-32 mt-3 ml-5">
+            <h2 className="font-bold text-lg text-midblue">
+              INGENIERO DESARROLLADOR DE SOFTWARE
+            </h2>
+            <h2 className="font-bold text-lg text-midblue">
+              EDUARD NICOLÁS SARMIENTO HERRERA
+            </h2>
+            <h3 className="font-semibold text-lg text-midblue">
+              Microsoft Azure arquitecto certificado
+            </h3>
+            <section className="flex flex-col">
+              <span className="text-lg">Ver mi Github</span>
+              <span className="text-lg">Ver mi LinkedIn</span>
+            </section>
+          </div>
+        </section>
+        <section className="flex flex-col pr-14 justify-between items-start">
+          <h2 className="mt-10 md:mt-20 lg:mt-32 font-semibold text-3xl">
+            Una breve historia sobre mí y como llegué al mundo IT
+          </h2>
+          <span className="mt-10 pr-10 text-lg">
+            Con mas de 10 años de experiencia laboral, 2 de ellos en el sector IT
+            directamente, la automatización de procesos en mi paso por el sector
+            financiero hicieron que quisiera profesionalizarme y prepararme para
+            este mundo IT que me fascina y me regala a diario un universo de
+            nuevos conocimientos y aprendizajes.
+          </span>
+        </section>
       </div>
-      <Image
-        loading="eager"
-        src={statics.fotoPerfil}
-        alt="ECR Software Engineer"
-        className="rounded-2xl shadow-md shadow-darkblue -z-30 w-28 md:min-w-28 lg:w-36"
-      />
-      <div className="flex flex-col items-center">
-        <div className="flex">
-          {names.map((name, index) => (
-            <motion.h2
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 + index / 10 }}
-              className="text-medium md:text-3xl font-bold text-darkblue text-center mr-2"
-            >
-              {name}
-            </motion.h2>
-          ))}
+      <section className="col-span-4 flex justify-center items-center -mt-32">
+        <div className="w-64 h-64">
+          <Image src={statics.iphone} className="relative top-[4.1rem] -right-52" />
+          <Image src={statics.desktop} className="relative top-5 -left-14" />
+          <Image src={statics.icon2} className="w-52 h-52 self-center justify-self-center" />
+          <Image src={statics.cloud} className="bottom-5 -left-14" />
+          <Image src={statics.web} className="bottom-[4.2rem] -right-[13.1rem]" />
         </div>
-        <div className="flex">
-          {lastnames.map((lastname, index) => (
-            <motion.h2
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 + index / 10 }}
-              className="text-medium md:text-3xl font-bold text-darkblue text-center mr-2"
-            >
-              {lastname}
-            </motion.h2>
-          ))}
-        </div>
-      </div>
+      </section>
+      <div className="col-span-1"></div>
     </div>
   );
 };

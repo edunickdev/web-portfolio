@@ -23,6 +23,10 @@ import dp203 from "../assets/images/DP203.png";
 import logopoli from "../assets/images/logopoli.jpg";
 import uislogo from "../assets/images/uislogo.png";
 import misiontic from "../assets/images/misionticlogo.png";
+import cloud from "../assets/icons/cloud.svg";
+import desktop from "../assets/icons/desktop.svg";
+import iphone from "../assets/icons/iphone.svg";
+import web from "../assets/icons/web.svg";
 
 export const statics = {
   mongoicon: mongoicon,
@@ -50,4 +54,8 @@ export const statics = {
   logopoli: logopoli,
   uislogo: uislogo,
   misiontic: misiontic,
+  cloud: cloud,
+  desktop: desktop,
+  iphone: iphone,
+  web: web,
 };
