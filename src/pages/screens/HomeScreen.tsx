@@ -1,11 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import HeaderProfileComponent from "../components/home/HeaderProfileComponent";
+import AboutMeScreen from "./AboutMeScreen";
 
 const HomeScreen = ({ refs }: { refs: Record<string, React.RefObject<HTMLDivElement>> }) => {
   return (
-    <div className="col-span-10 flex flex-col justify-around h-[88vh] bg-darkblue">
+    <>
+      <div className="col-span-10 flex flex-col h-auto justify-around">
         <HeaderProfileComponent refs={refs} />
-    </div>
+        <AboutMeScreen refs={refs} />
+      </div>
+    </>
   );
 };
 

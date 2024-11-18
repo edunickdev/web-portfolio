@@ -16,7 +16,7 @@ const MenuBarComponent = ({ onScroll }: { onScroll: (section: string) => void })
   }, [fetchProjects]);
 
   return (
-    <nav className="flex justify-between items-center h-[10vh] md:grid md:grid-cols-12 bg-darkblue z-20">
+    <nav className="flex justify-between items-center h-[10vh] md:grid md:grid-cols-12 bg-darkblue z-20 fixed w-full shadow-lg">
       {/* Espaciado para diseño */}
       <div className="md:col-span-1"></div>
 

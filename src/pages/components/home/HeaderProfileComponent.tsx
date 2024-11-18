@@ -4,10 +4,10 @@ import { Image } from "@nextui-org/react";
 const HeaderProfileComponent = ({ refs }: { refs: Record<string, React.RefObject<HTMLDivElement>> }) => {
 
   return (
-    <div className="flex md:grid md:grid-cols-12 h-full p-10 text-lightblue">
+    <div className="flex md:grid md:grid-cols-12 p-10 text-lightblue h-[88vh] bg-darkblue mt-[9.8vh]" ref={refs.about}>
       <div className="col-span-1"></div>
       <div className="col-span-6">
-        <section className="flex" ref={refs.about}>
+        <section className="flex">
           <Image src={statics.fotoPerfil} className="w-24 h-32 mt-4" />
           <div className="w-auto h-32 mt-3 ml-5">
             <h2 className="font-bold text-lg text-midblue">
