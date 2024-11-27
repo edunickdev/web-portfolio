@@ -1,73 +1,102 @@
+import { Button, Image, Tooltip } from "@nextui-org/react";
+import { motion } from "framer-motion";
+import { formalStudies } from "../../config/helpers/constants";
+import { useEffect, useState } from "react";
+
 const AboutMeScreen = ({ refs }: { refs: Record<string, React.RefObject<HTMLDivElement>> }) => {
+  const [listStudies, setListStudies] = useState(formalStudies);
+  const [selectedFilter, setSelectedFilter] = useState("Formal");
+
+  const handleStudies = (type: string) => {
+    setSelectedFilter(type);
+    setListStudies(formalStudies.filter((study) => study.type === type));
+  }
+
+  useEffect(() => {
+    handleStudies("Formal");
+  }, []);
 
   return (
-    <div className="grid grid-cols-12 h-[90vh] justify-center items-start" ref={refs.studies}>
+    <div
+      className="grid grid-cols-12 h-[90vh] justify-center items-start"
+      ref={refs.studies}
+    >
       <div className="col-span-12 grid grid-cols-12">
-        <h2 className="col-span-12 text-3xl md:text-4xl text-center text-darkblue font-bold py-14">
+        <h2 className="col-span-12 text-3xl md:text-4xl text-center text-darkblue font-bold pt-8 pb-5">
           Estudios y Certificaciones
         </h2>
         <section className="col-span-12 grid grid-cols-12 pt-1">
-          <div className="col-span-5 flex flex-col gap-y-5 md:grid md:grid-cols-5">
-            <div className="bg-darkblue h-36 col-span-5 rounded-tr-lg rounded-br-lg shadow-lg flex flex-col items-start justify-center pl-36 md:pl-[2.6rem] md:grid md:grid-cols-6 md:place-content-center">
-              <div className="hidden md:block md:col-span-1"></div>
-              <h2 className="col-span-5 text-2xl text-lightblue font-semibold">
-                Ingeniería de desarrollo de Software
-              </h2>
-              <div className="hidden md:block md:col-span-1"></div>
-              <h3 className="col-span-5 text-midblue font-semibold text-lg">
-                6to Semestre
-              </h3>
-              <div className="hidden md:block md:col-span-1"></div>
-              <span className="col-span-5 text-midblue font-semibold text-lg">
-                Politécnico Grancolombiano
-              </span>
-              <div className="hidden md:block md:col-span-1"></div>
-              <span className="col-span-5 text-midblue font-semibold text-lg">
-                2025
-              </span>
-            </div>
-            <div className="bg-darkblue h-36 col-span-5 rounded-tr-lg rounded-br-lg shadow-lg flex flex-col items-start justify-center pl-36 md:pl-[2.6rem] md:grid md:grid-cols-6 md:place-content-center">
-              <div className="hidden md:block md:col-span-1"></div>
-              <h2 className="col-span-5 text-2xl text-lightblue font-semibold">
-                Diplomado en desarrollo web
-              </h2>
-              <div className="hidden md:block md:col-span-1"></div>
-              <h3 className="col-span-5 text-midblue font-semibold text-lg">
-                Graduado
-              </h3>
-              <div className="hidden md:block md:col-span-1"></div>
-              <span className="col-span-5 text-midblue font-semibold text-lg">
-                Universidad Industrial de Santander - UIS
-              </span>
-              <div className="hidden md:block md:col-span-1"></div>
-              <span className="col-span-5 text-midblue font-semibold text-lg">
-                2023
-              </span>
+          <nav className="col-span-6 h-[10vh] bg-darkblue rounded-r-xl flex items-center justify-end gap-x-5 pr-20">
+            <Button
+              onPress={() => handleStudies("Formal")}
+              className="bg-transparent text-lightblue hover:text-midblue text-xl"
+            >
+              Formales
+            </Button>
+            <Button
+              onPress={() => handleStudies("Microsoft")}
+              className="bg-transparent text-lightblue hover:text-midblue text-xl"
+            >
+              Microsoft Azure
+            </Button>
+            <Button
+              onPress={() => handleStudies("Complementarios")}
+              className="bg-transparent text-lightblue hover:text-midblue text-xl"
+            >
+              Complementarios
+            </Button>
+          </nav>
+          <div className="col-span-6"></div>
+          <div className="col-span-1"></div>
+          <div className="col-span-10 h-[58vh] grid grid-cols-10">
+            {selectedFilter === "Microsoft" ? <h2 className="col-span-10 text-end text-darkblue font-semibold">Haz click en los escudos para ver los certificados</h2> : null}
+            <div className="col-span-10 flex flex-wrap items-center justify-center h-full gap-x-3 pb-5">
+              {selectedFilter === "Complementarios"
+                ? listStudies.map((study, index) => (
+                  <Tooltip content={study.title} offset={-2} showArrow className="text-darkblue text-medium">
+                    <motion.div
+                      key={study.title}
+                      initial={{ opacity: 0, x: 30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                      className="flex flex-col w-32 h-[8.2rem] justify-center items-center p-2 bg-midblue rounded-md overflow-hidden shadow-md shadow-darkblue gap-y-1"
+                    >
+                      <h2 className="text-center text-darkblue font-bold text-small overflow-clip line-clamp-3">
+                        {study.title}
+                      </h2>
+                      <div className="flex flex-col py-2 justify-center items-center">
+                        <Image src={study.image} className={`self-center ${study.institution === "Platzi" ? "w-20" : "w-[3.5rem]"}`} alt="" radius="none" />
+                        <p className="text-center self-start text-darkblue font-semibold text-medium">
+                          {study.description}
+                        </p>
+                      </div>
+                    </motion.div>
+                  </Tooltip>
+                  ))
+                : listStudies.map((study, index) => (
+                    <motion.a
+                      key={study.title}
+                      initial={{ opacity: 0, x: 30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.2 }}
+                      className="flex flex-col md:w-44 lg:w-52 justify-center items-center gap-y-10"
+                      href={study.url && study.url}
+                      target="_blank"
+                    >
+                      <h2 className="text-center text-darkblue font-semibold text-xl">
+                        {study.title}
+                      </h2>
+                      <div className="flex flex-col justify-between items-center">
+                        <Image src={study.image} className="w-44" alt="" />
+                        <p className="text-center text-darkblue font-semibold text-lg">
+                          {study.description}
+                        </p>
+                      </div>
+                    </motion.a>
+                  ))}
             </div>
           </div>
-          <div className="col-span-2 rounded-tr-lg rounded-br-lg"></div>
-          <div className="col-span-5 flex flex-col gap-y-5">
-            <div className="bg-midblue h-36 rounded-tl-lg rounded-bl-lg shadow-lg flex flex-col justify-center items-start pl-14">
-            <div className="hidden md:block md:col-span-1"></div>
-              <span className="text-darkblue text-xl">Microsoft Azure Administrator AZ-104</span>
-              <span className="text-darkblue text-xl">Microsoft Azure Architect solutions AZ-305</span>
-              <span className="text-darkblue text-xl">Microsoft Azure Data Engineer DP-203</span>
-            </div>
-            <div className="bg-midblue h-auto rounded-tl-lg rounded-bl-lg shadow-lg py-5">
-              <h2 className="text-darkblue text-2xl pl-14 font-bold">Cursos Complementarios</h2>
-              <div className="flex flex-col">
-                <span className="text-darkblue text-lg pl-14">Curso teórico práctico de redes informáticas</span>
-                <span className="text-darkblue text-lg pl-14">Curso teórico práctico de desarrollo móvil con flutter</span>
-                <span className="text-darkblue text-lg pl-14">Curso de desarrollo web y APIs con FastAPI</span>
-                <span className="text-darkblue text-lg pl-14">Curso de desarrollo web y APIs con Django</span>
-                <span className="text-darkblue text-lg pl-14">Curso de desarrollo web moderno con Angular</span>
-                <span className="text-darkblue text-lg pl-14">Curso de desarrollo web moderno con React</span>
-                <span className="text-darkblue text-lg pl-14">Curso de fundamentos de AI y ML para la web</span>
-                <span className="text-darkblue text-lg pl-14">Curso de fundamentos de diseño de interfaces UI/UX</span>
-                <span className="text-darkblue text-lg pl-14">Curso de pensamiento lógico, diagramas y algoritmos</span>
-              </div>
-            </div>
-          </div>
+          <div className="col-span-1"></div>
         </section>
       </div>
     </div>

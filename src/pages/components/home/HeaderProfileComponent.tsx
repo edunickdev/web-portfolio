@@ -26,7 +26,7 @@ const HeaderProfileComponent = ({ refs }: { refs: Record<string, React.RefObject
           </div>
         </section>
         <section className="flex flex-col pr-14 justify-between items-start">
-          <h2 className="mt-10 md:mt-20 lg:mt-32 font-semibold text-3xl">
+          <h2 className="mt-10 md:mt-12 lg:mt-20 font-semibold text-3xl">
             Una breve historia sobre mí y como llegué al mundo IT
           </h2>
           <span className="mt-10 pr-10 text-lg">

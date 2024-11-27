@@ -1,9 +1,9 @@
-import mongoicon from "../assets/images/mongodb.png";
-import angularicon from "../assets/images/angular.png";
-import reacticon from "../assets/images/react.png";
-import fluttericon from "../assets/images/fluttericon.png";
-import djangoicon from "../assets/images/django.png";
-import fastapiicon from "../assets/images/fastapi.png";
+import mongoicon from "../assets/images/MongoDB.svg";
+import angularicon from "../assets/images/angular.svg";
+import reacticon from "../assets/images/React.svg";
+import fluttericon from "../assets/images/fluttericon.svg";
+import djangoicon from "../assets/images/Django.svg";
+import fastapiicon from "../assets/images/FastAPI.svg";
 import ecricon from "../assets/icons/ecricon.png";
 import icon2 from "../assets/icons/iconceleste.png";
 import fotoPerfil from "../assets/images/fotoPerfil.jpg";
@@ -17,23 +17,34 @@ import minibgprojects1 from "../assets/images/mini1projects.png";
 import minibgprojects2 from "../assets/images/mini2projects.png";
 import flechaSiguiente from "../assets/icons/siguiente.png";
 import flechaAnterior from "../assets/icons/volver.png";
-import az104 from "../assets/images/AZ104.png";
-import az305 from "../assets/images/AZ305.png";
-import dp203 from "../assets/images/DP203.png";
-import logopoli from "../assets/images/logopoli.jpg";
-import uislogo from "../assets/images/uislogo.png";
+import az104 from "../assets/images/AZ104.svg";
+import az305 from "../assets/images/AZ305.svg";
+import dp203 from "../assets/images/DP203.svg";
+import logopoli from "../assets/images/logopoli.svg";
+import uislogo from "../assets/images/uislogo.svg";
 import misiontic from "../assets/images/misionticlogo.png";
 import cloud from "../assets/icons/cloud.svg";
 import desktop from "../assets/icons/desktop.svg";
 import iphone from "../assets/icons/iphone.svg";
 import web from "../assets/icons/web.svg";
+import platzi from "../assets/images/platzi.svg";
+import dart from "../assets/images/dart.svg";
+import riverpod from "../assets/images/riverpod.svg";
+import playconsole from "../assets/images/playconsole.svg";
+import sqlite from "../assets/images/sqlite.svg";
+import tailwind from "../assets/images/Tailwind.svg";
+import azure from "../assets/images/Azure.svg";
+import typescript from "../assets/images/Typescript.svg";
+import postgresql from "../assets/images/PostgreSQL.svg";
+import webscrapping from "../assets/images/WebScrapping.svg";
 
-export const statics = {
-  mongoicon: mongoicon,
+
+export const statics: { [key: string]: string } = {
+  MongoDB: mongoicon,
   angularicon: angularicon,
-  reacticon: reacticon,
-  fluttericon: fluttericon,
-  djangoicon: djangoicon,
+  React: reacticon,
+  Flutter: fluttericon,
+  Django: djangoicon,
   fastapiicon: fastapiicon,
   ecricon: ecricon,
   icon2: icon2,
@@ -58,4 +69,15 @@ export const statics = {
   desktop: desktop,
   iphone: iphone,
   web: web,
+  platzi: platzi,
+  Dart: dart,
+  Riverpod: riverpod,
+  PlayStore: playconsole,
+  Sqlite: sqlite,
+  FastAPI: fastapiicon,
+  Tailwind: tailwind,
+  Azure: azure,
+  Typescript: typescript,
+  PostgreSQL: postgresql,
+  WebScrapping: webscrapping,
 };

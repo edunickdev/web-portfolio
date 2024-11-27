@@ -12,6 +12,7 @@ export interface Project {
 export interface Projects {
   apiKey: string;
   projects: Project[];
+  selected_project: number;
   platzi_courses: PlatziCourses[];
   other_courses: PlatziCourses[];
   baseUrl: string;
@@ -21,6 +22,7 @@ export interface Projects {
 export interface ProjectsActions {
   fetchProjects: () => void;
   fetchAPIKey: () => void;
+  selectProject: (index: number) => void;
 }
 
 export interface PlatziCourses {

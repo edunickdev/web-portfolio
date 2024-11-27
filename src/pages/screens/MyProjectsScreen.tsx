@@ -1,146 +1,47 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useProjects } from "../../stores/stores";
-import ProjectsBGComponent from "../components/projects/projectsBgComponent";
-import { Button, Spinner } from "@nextui-org/react";
-import DetailProjectComponent from "../components/projects/detailProjectComponent";
 import { motion } from "framer-motion";
-import { IoMdArrowRoundForward, IoMdArrowRoundBack } from "react-icons/io";
-import { MdUpdate } from "react-icons/md";
 
-const useIsMobile = (breakpoint: number = 768) => {
-  const [isMobile, setIsMobile] = useState<boolean | undefined>(undefined);
+import ImageComponents from "../components/projects/imagesComponent";
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const mediaQuery = window.matchMedia(`(max-width: ${breakpoint}px)`);
 
-      setIsMobile(mediaQuery.matches);
-
-      const handler = (event: MediaQueryListEvent) => {
-        setIsMobile(event.matches);
-      };
-
-      mediaQuery.addEventListener("change", handler);
-
-      return () => {
-        mediaQuery.removeEventListener("change", handler);
-      };
-    } else {
-      setIsMobile(false);
-    }
-  }, [breakpoint]);
-
-  return isMobile;
-};
-
-const MyProjectsScreen = () => {
-  const [visibleProjects, setVisibleProjects] = useState<number[]>([]);
-  const isMobile = useIsMobile(768);
-
+const MyProjectsScreen = ({ refs }: { refs: Record<string, React.RefObject<HTMLDivElement>> }) => {
   const projects = useProjects((state) => state.projects);
-  const isLoading = useProjects((state) => state.loading);
+  const setProject = useProjects((state) => state.selectProject);
   const fetchProjects = useProjects((state) => state.fetchProjects);
 
   useEffect(() => {
-    if (projects.length === 0) {
       fetchProjects();
-    }
-  }, [projects.length, fetchProjects]);
-
-  useEffect(() => {
-    if (isMobile === undefined || projects.length === 0) return;
-
-    if (isMobile) {
-      setVisibleProjects([0]);
-    } else {
-      const indexes = projects.slice(0, 3).map((_, index) => index);
-      setVisibleProjects(indexes);
-    }
-  }, [isMobile, projects]);
-
-  const handleNext = () => {
-    setVisibleProjects((prevVisible) => {
-      if (isMobile) {
-        return [(prevVisible[0] + 1) % projects.length];
-      } else {
-        return prevVisible.map((index) => (index + 1) % projects.length);
-      }
-    });
-  };
-
-  const handlePrev = () => {
-    setVisibleProjects((prevVisible) => {
-      if (isMobile) {
-        return [
-          prevVisible[0] === 0 ? projects.length - 1 : prevVisible[0] - 1,
-        ];
-      } else {
-        return prevVisible.map((index) =>
-          index === 0 ? projects.length - 1 : index - 1
-        );
-      }
-    });
-  };
-
-  if (isMobile === undefined) {
-    return null;
-  }
-
+  }, [projects]);
+  
   return (
-    <div className="grid grid-cols-12 max-h-screen">
-      <ProjectsBGComponent />
-      <div className="col-span-12 flex items-center justify-center mt-5">
-        <h1 className="text-medium md:text-2xl text-darkblue font-bold text-center">
-          Selecciona el proyecto del que quieres conocer más.
-        </h1>
+    <section className="grid grid-cols-12 h-[90vh] bg-darkblue gap-x-20" ref={refs.projects}>
+      <h2 className="col-span-12 text-center text-3xl md:text-4xl text-lightblue mt-8">Proyectos</h2>
+      <div className="col-span-4 grid grid-cols-4">
+        <div className="flex flex-col gap-y-3 col-span-4 overflow-x-visible h-[55vh]">
+          {
+            projects.map((project, index) => (
+              <motion.div
+                key={project.id_project}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: index * 0.1 }}
+                className="bg-lightblue h-12 py-2 pl-20 pr-3 hover:pl-[5.4rem] hover:pr-9 w-[16rem] lg:w-[20rem] hover:w-[17rem] lg:hover:w-[20.8rem] transition-all duration-200 hover:bg-midblue hover:text-lightblue flex items-center text-darkblue text-xl font-semibold rounded-tr-md rounded-br-md cursor-pointer"
+                onClick={() => setProject(index)}
+              >
+                {project.name}
+              </motion.div>
+            ))
+          }
+        </div>
       </div>
-      <div className="col-span-1 flex items-start md:items-center mt-40 md:mt-0 justify-center">
-        <Button
-          isIconOnly
-          size="lg"
-          onClick={handlePrev}
-          className="bg-darkblue shadow-md text-white"
-        >
-          <IoMdArrowRoundBack />
-        </Button>
+      <div className="col-span-8 flex items-start justify-start mr-10 lg:mr-14">
+        <div className="flex flex-col justify-start items-center w-full h-[60vh] bg-lightblue -mt-5 rounded-l-md overflow-hidden p-4">
+          <ImageComponents />
+        </div>
+        <div className="w-5 h-[62vh] bg-midblue -mt-7 rounded-tl-md rounded-bl-md"></div>
       </div>
-      <div className="col-span-10 flex justify-around items-start py-5 md:py-10 md:px-5 gap-x-4 pt-1 md:pt-0 md:-mt-4">
-        {isLoading && projects.length === 0 ? (
-          <div className="flex flex-col justify-center items-center mt-10">
-            <Spinner
-              label="Preparando los proyectos, si no se muestran en 2 segundos, presiona el botón"
-              color="primary"
-              className="w-full h-full -z-20 transition-all duration-300 text-center mb-4"
-            />
-            <Button isIconOnly onPress={fetchProjects}>
-              <MdUpdate />
-            </Button>
-          </div>
-        ) : (
-          projects.length > 0 &&
-          visibleProjects.map((index) => (
-            <motion.div
-              key={projects[index].id_project}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-            >
-              <DetailProjectComponent {...projects[index]} />
-            </motion.div>
-          ))
-        )}
-      </div>
-      <div className="col-span-1 flex items-start md:items-center mt-40 md:mt-0 justify-center">
-        <Button
-          isIconOnly
-          size="lg"
-          className="bg-darkblue shadow-md text-white"
-          onClick={handleNext}
-        >
-          <IoMdArrowRoundForward />
-        </Button>
-      </div>
-    </div>
+    </section>
   );
 };
 

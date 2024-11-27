@@ -1,12 +1,13 @@
-import { Image } from "@nextui-org/react";
+import { Button, Image, Tooltip } from "@nextui-org/react";
 import { statics } from "../../../config/images";
-import { Project } from "../../../stores/store_types";
 import { useState } from "react";
+import { useProjects } from "../../../stores/stores";
 
-const ImageComponents = (project: Project) => {
+const ImageComponents = () => {
   const [currentImage, setCurrentImage] = useState(0);
+  const project = useProjects((state) => state.projects[state.selected_project]);
 
-  const images = [project.main_image, ...project.other_images];
+  const images = project && [project.main_image, ...project.other_images];
 
   const goToNextImage = () => {
     if (currentImage === images.length - 1) {
@@ -24,25 +25,51 @@ const ImageComponents = (project: Project) => {
     }
   };
 
+
   return (
-    <div className="flex flex-col h-[20rem] md:h-[25rem]">
-      <div className="flex mt-1 justify-around items-center">
-        <Image
-          src={statics.flechaAnterior}
-          onClick={goToPreviousImage}
-          className="cursor-pointer animate-appearance-in hover:animate-pulse transition-all duration-300"
-        />
-        <Image
-          src={images[currentImage]}
-          alt=""
-          className="h-[19rem] md:h-[25rem] object-cover mx-auto"
-        />
-        <Image
-          src={statics.flechaSiguiente}
-          onClick={goToNextImage}
-          className="cursor-pointer animate-appearance-in hover:animate-pulse transition-all duration-300"
-        />
+    <div className="flex h-full w-full justify-between items-center gap-x-2">
+      <div className="flex flex-col justify-start items-center h-full p-2">
+        <section className="flex justify-center items-center gap-x-1">
+          <Button
+            isIconOnly
+            radius="full"
+            className="bg-darkblue text-lightblue cursor-pointer animate-appearance-in transition-all duration-300 shadow-md shadow-midblue"
+            onClick={goToPreviousImage}
+          >
+            <Image src={statics.flechaAnterior} className="w-9 p-2" />
+          </Button>
+          <Button
+            isIconOnly
+            radius="full"
+            className="bg-darkblue text-lightblue cursor-pointer animate-appearance-in transition-all duration-300 shadow-md shadow-midblue"
+            onClick={goToNextImage}
+          >
+            <Image src={statics.flechaSiguiente} className="w-9 p-2" />
+          </Button>
+        </section>
+        <section className="flex flex-col justify-start items-center pt-3 gap-y-2">
+          {
+            project?.technologies.map((technology, index) => {
+              const route = `${statics[technology]}`;
+
+              return (
+                <Tooltip
+                  content={technology}
+                  placement="left"
+                  className="bg-midblue text-darkblue font-semibold"
+                >
+                  <Image key={index} src={route} className="text-sm w-9" />
+                </Tooltip>
+              );
+            })}
+        </section>
       </div>
+
+      <Image
+        src={images && images[currentImage]}
+        alt=""
+        className="object-cover h-[58vh] w-full border-2 border-midblue"
+      />
     </div>
   );
 };

@@ -12,6 +12,7 @@ export const useNavMenu = create<menuInterface>((set) => ({
 
 export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
   projects: [],
+  selected_project: 0,
   platzi_courses: [],
   other_courses: [],
   apiKey: "",
@@ -115,5 +116,8 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
       .catch((error) => {
         console.error(error);
       });
+  },
+  selectProject: (index: number) => {
+    set({ selected_project: index });
   },
 }));
