@@ -46,14 +46,14 @@ const MenuBarComponent = ({ onScroll }: { onScroll: (section: string) => void })
           <Button variant="bordered" onPress={() => onScroll("about")} className="block px-4 py-2 hover:bg-midblue transition-all duration-250 cursor-pointer bg-transparent border-none w-24 text-lightblue">
             Sobre mí
           </Button>
-          <Button variant="bordered" onPress={() => onScroll("projects")} className="block px-4 py-2 hover:bg-midblue transition-all duration-250 cursor-pointer bg-transparent border-none w-24 text-lightblue">
-            Proyectos
-          </Button>
           <Button variant="bordered" onPress={() => onScroll("studies")} className="block px-4 py-2 hover:bg-midblue transition-all duration-250 cursor-pointer bg-transparent border-none w-24 text-lightblue">
             Estudios
           </Button>
-          <Button variant="bordered" onPress={() => onScroll("about")} className="block px-4 py-2 hover:bg-midblue transition-all duration-250 cursor-pointer bg-transparent border-none w-24 text-lightblue">
-            Servicios
+          <Button variant="bordered" onPress={() => onScroll("projects")} className="block px-4 py-2 hover:bg-midblue transition-all duration-250 cursor-pointer bg-transparent border-none w-24 text-lightblue">
+            Proyectos
+          </Button>
+          <Button variant="bordered" onPress={() => onScroll("technologies")} className="block px-4 py-2 hover:bg-midblue transition-all duration-250 cursor-pointer bg-transparent border-none w-24 text-lightblue">
+            Tecnologías
           </Button>
         </section>
       </div>
@@ -63,14 +63,14 @@ const MenuBarComponent = ({ onScroll }: { onScroll: (section: string) => void })
         <Button variant="bordered" onPress={() => onScroll("about")} className="text-lightblue text-xl lg:text-2xl hover:text-midblue transition-all duration-250 cursor-pointer z-10 bg-transparent border-none">
           Sobre mí
         </Button>
-        <Button variant="bordered" onPress={() => onScroll("projects")} className="text-lightblue text-xl lg:text-2xl hover:text-midblue transition-all duration-250 cursor-pointer z-10 bg-transparent border-none">
-          Proyectos
-        </Button>
         <Button variant="bordered" onPress={() => onScroll("studies")} className="text-lightblue text-xl lg:text-2xl hover:text-midblue transition-all duration-250 cursor-pointer z-10 bg-transparent border-none">
           Estudios
         </Button>
-        <Button variant="bordered" onPress={() => onScroll("about")} className="text-lightblue text-xl lg:text-2xl hover:text-midblue transition-all duration-250 cursor-pointer z-10 bg-transparent border-none">
-          Servicios
+        <Button variant="bordered" onPress={() => onScroll("projects")} className="text-lightblue text-xl lg:text-2xl hover:text-midblue transition-all duration-250 cursor-pointer z-10 bg-transparent border-none">
+          Proyectos
+        </Button>
+        <Button variant="bordered" onPress={() => onScroll("technologies")} className="text-lightblue text-xl lg:text-2xl hover:text-midblue transition-all duration-250 cursor-pointer z-10 bg-transparent border-none">
+          Tecnologías
         </Button>
       </section>
 

@@ -12,6 +12,12 @@ export interface Study {
     url?: string;
 }
 
+export interface Tech {
+    name: string;
+    image: string;
+    level: string;
+}
+
 
 export const formalStudies: Array<Study> = [
     {
@@ -130,3 +136,17 @@ export const formalStudies: Array<Study> = [
         image: statics.Flutter,
     }
 ];
+
+
+export const tecnologias: Array<Tech> = [
+    {
+        name: "Django",
+        image: statics.Django,
+        level: "Intermedio"
+    },
+    {
+        name: "FastAPI",
+        image: statics.FastAPI,
+        level: "Intermedio"
+    }
+]

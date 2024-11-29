@@ -1,6 +1,6 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import HeaderProfileComponent from "../components/home/HeaderProfileComponent";
 import AboutMeScreen from "./AboutMeScreen";
+import KnowledgesScreen from "./KnowledgesScreen";
 import MyProjectsScreen from "./MyProjectsScreen";
 
 const HomeScreen = ({ refs }: { refs: Record<string, React.RefObject<HTMLDivElement>> }) => {
@@ -10,6 +10,7 @@ const HomeScreen = ({ refs }: { refs: Record<string, React.RefObject<HTMLDivElem
         <HeaderProfileComponent refs={refs} />
         <AboutMeScreen refs={refs} />
         <MyProjectsScreen refs={refs} />
+        <KnowledgesScreen refs={refs} />
       </div>
     </>
   );
