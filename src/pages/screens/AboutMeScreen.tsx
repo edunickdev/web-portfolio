@@ -70,7 +70,7 @@ const AboutMeScreen = ({ refs }: { refs: Record<string, React.RefObject<HTMLDivE
             transition={{ duration: 1, delay: 1.5 }}
             className="col-span-10 h-[58vh] grid grid-cols-10">
             {selectedFilter === "Microsoft" ? <h2 className="col-span-10 text-end text-darkblue font-semibold">Haz click en los escudos para ver los certificados</h2> : null}
-            <div className="col-span-10 flex flex-wrap items-start justify-center h-full gap-x-3 pb-5">
+            <div className="col-span-10 flex flex-wrap items-start justify-center gap-x-3 p-10">
               {selectedFilter === "Complementarios"
                 ? listStudies.map((study, index) => (
                   <Tooltip content={study.title} offset={-1} showArrow className="text-darkblue text-medium">
@@ -79,7 +79,7 @@ const AboutMeScreen = ({ refs }: { refs: Record<string, React.RefObject<HTMLDivE
                       initial={{ opacity: 0, x: 30 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.05 }}
-                      className="flex flex-col w-32 h-[8.2rem] justify-center items-center p-2 bg-midblue rounded-md overflow-hidden shadow-md shadow-darkblue gap-y-1"
+                      className="flex flex-col w-32 h-[8.2rem] justify-center items-center p-2 bg-midblue rounded-md overflow-hidden shadow-md shadow-darkblue"
                     >
                       <h2 className="text-center text-darkblue font-bold text-small overflow-clip line-clamp-3">
                         {study.title}
@@ -99,7 +99,7 @@ const AboutMeScreen = ({ refs }: { refs: Record<string, React.RefObject<HTMLDivE
                       initial={{ opacity: 0, x: 30 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.2 }}
-                      className="flex flex-col md:w-44 lg:w-52 justify-center items-start gap-y-3 mt-5"
+                      className="flex flex-col md:w-44 lg:w-52 justify-center items-start gap-y-3"
                       href={study.url && study.url}
                       target="_blank"
                     >
