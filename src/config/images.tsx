@@ -37,6 +37,8 @@ import pandas from "../assets/images/Pandas.svg";
 import openai from "../assets/images/OpenAI.svg";
 import java from "../assets/images/Java.svg";
 import icon2 from "../assets/images/icon2.svg";
+import aback from "../assets/icons/back.svg";
+import afront from "../assets/icons/next.svg";
 
 
 export const statics: { [key: string]: string } = {
@@ -80,4 +82,6 @@ export const statics: { [key: string]: string } = {
   OpenAI: openai,
   Java: java,
   icon2: icon2,
+  flechaAtras: aback,
+  flechaSiguiente: afront,
 };

@@ -2,6 +2,7 @@ import { Button, Image, Tooltip } from "@nextui-org/react";
 import { statics } from "../../../config/images";
 import { useState } from "react";
 import { useProjects } from "../../../stores/stores";
+import { motion } from "framer-motion";
 
 const ImageComponents = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -36,7 +37,7 @@ const ImageComponents = () => {
             className="bg-darkblue text-lightblue cursor-pointer animate-appearance-in transition-all duration-300 shadow-md shadow-midblue"
             onClick={goToPreviousImage}
           >
-            <Image src={statics.flechaAnterior} className="w-9 p-2" />
+            <Image src={statics.flechaAtras} className="w-9 p-2" />
           </Button>
           <Button
             isIconOnly
@@ -58,7 +59,14 @@ const ImageComponents = () => {
                   placement="left"
                   className="bg-midblue text-darkblue font-semibold"
                 >
-                  <Image key={index} src={route} className="text-sm w-9" />
+                  <motion.img
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: index * 0.1 }}
+                    key={index} 
+                    src={route && route} 
+                    className="text-sm w-9" 
+                  />
                 </Tooltip>
               );
             })}

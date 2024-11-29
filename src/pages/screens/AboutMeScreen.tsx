@@ -70,7 +70,7 @@ const AboutMeScreen = ({ refs }: { refs: Record<string, React.RefObject<HTMLDivE
             transition={{ duration: 1, delay: 1.5 }}
             className="col-span-10 h-[58vh] grid grid-cols-10">
             {selectedFilter === "Microsoft" ? <h2 className="col-span-10 text-end text-darkblue font-semibold">Haz click en los escudos para ver los certificados</h2> : null}
-            <div className="col-span-10 flex flex-wrap items-center justify-center h-full gap-x-3 pb-5">
+            <div className="col-span-10 flex flex-wrap items-start justify-center h-full gap-x-3 pb-5">
               {selectedFilter === "Complementarios"
                 ? listStudies.map((study, index) => (
                   <Tooltip content={study.title} offset={-1} showArrow className="text-darkblue text-medium">
@@ -99,27 +99,25 @@ const AboutMeScreen = ({ refs }: { refs: Record<string, React.RefObject<HTMLDivE
                       initial={{ opacity: 0, x: 30 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.2 }}
-                      className="flex flex-col md:w-44 lg:w-52 justify-center items-start gap-y-5"
+                      className="flex flex-col md:w-44 lg:w-52 justify-center items-start gap-y-3 mt-5"
                       href={study.url && study.url}
                       target="_blank"
                     >
                       <h2 className="text-center text-darkblue font-semibold text-xl">
                         {study.title}
                       </h2>
-                      <div className="flex flex-col justify-between items-center">
-                        <p className="text-center text-darkblue font-semibold text-lg">
-                          {study.description}
-                        </p>
+                      <p className="w-full text-center text-darkblue font-semibold text-lg">
+                        {study.description}
+                      </p>
                         <motion.img
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ delay: 0.8 }}
                           loading="eager"
                           src={study.image} 
-                          className="w-44 rounded-xl" 
+                          className="w-44 rounded-xl self-center" 
                           alt="" 
                         />
-                      </div>
                     </motion.a>
                   ))}
             </div>
