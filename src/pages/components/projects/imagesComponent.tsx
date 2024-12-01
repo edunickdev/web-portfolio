@@ -43,8 +43,8 @@ const ImageComponents = () => {
   }, [hasAnimated, project]);
 
   return (
-    <div className="flex h-full w-full justify-between items-center gap-x-2">
-      <div className="flex flex-col justify-start items-center h-full p-2">
+    <div className="flex flex-col md:flex-row h-full w-full justify-between items-center gap-x-2">
+      <div className="flex md:flex-col justify-start items-center h-full p-2 gap-x-5 md:gap-x-0">
         <section className="flex justify-center items-center gap-x-1">
           <Button
             isIconOnly
@@ -63,7 +63,7 @@ const ImageComponents = () => {
             <Image src={statics.flechaSiguiente} className="w-9 p-2" />
           </Button>
         </section>
-        <section className="flex flex-col justify-start items-center pt-3 gap-y-2">
+        <section className="flex md:flex-col justify-start items-center mt-0 md:pt-3 gap-y-2">
           {project?.technologies.map((technology, index) => {
             const route = `${statics[technology]}`;
             return (
@@ -94,7 +94,7 @@ const ImageComponents = () => {
         <Image
           src={images && images[currentImage]}
           alt=""
-          className="object-cover h-[58vh] w-full border-2 border-midblue"
+          className="object-cover h-[49vh] md:h-[58vh] w-full border-2 border-midblue"
         />
         <AnimatePresence>
           {showInfo && (
@@ -105,7 +105,7 @@ const ImageComponents = () => {
               exit={{ opacity: 0 }}
             >
               <motion.h1
-                className="text-2xl font-bold p-2 bg-darkblue rounded-xl"
+                className="text-xl md:text-2xl font-bold p-2 bg-darkblue rounded-xl"
                 initial={{ y: -50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
@@ -113,7 +113,7 @@ const ImageComponents = () => {
                 {project?.title}
               </motion.h1>
               <motion.p
-                className="text-sm mt-2 text-left py-2 px-4 bg-darkblue rounded-xl"
+                className="text-xs md:text-sm mt-2 text-left py-2 px-4 bg-darkblue rounded-xl"
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
