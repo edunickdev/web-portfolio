@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'NunitoSans';
+    src: url('./NunitoSans_7pt_Condensed-Bold.ttf') format('truetype');
+    font-weight: 700; /* Bold */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'NunitoSans';
+    src: url('./NunitoSans_7pt_Condensed-ExtraBold.ttf') format('truetype');
+    font-weight: 800; /* ExtraBold */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'NunitoSans';
+    src: url('./NunitoSans_7pt_Condensed-Medium.ttf') format('truetype');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'NunitoSans';
+    src: url('./NunitoSans_7pt_Condensed-SemiBold.ttf') format('truetype');
+    font-weight: 600; /* SemiBold */
+    font-style: normal;
+  }
+  

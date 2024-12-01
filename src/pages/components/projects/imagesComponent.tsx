@@ -1,11 +1,13 @@
 import { Button, Image, Tooltip } from "@nextui-org/react";
 import { statics } from "../../../config/images";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useProjects } from "../../../stores/stores";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const ImageComponents = () => {
   const [currentImage, setCurrentImage] = useState(0);
+  const [showInfo, setShowInfo] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
   const project = useProjects((state) => state.projects[state.selected_project]);
 
   const images = project && [project.main_image, ...project.other_images];
@@ -26,6 +28,19 @@ const ImageComponents = () => {
     }
   };
 
+  useEffect(() => {
+    if (!hasAnimated) {
+      setTimeout(() => {
+        setShowInfo(true);
+      }, 1200);
+        
+      const timer = setTimeout(() => {
+        setShowInfo(false);
+        setHasAnimated(true);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [hasAnimated, project]);
 
   return (
     <div className="flex h-full w-full justify-between items-center gap-x-2">
@@ -49,35 +64,66 @@ const ImageComponents = () => {
           </Button>
         </section>
         <section className="flex flex-col justify-start items-center pt-3 gap-y-2">
-          {
-            project?.technologies.map((technology, index) => {
-              const route = `${statics[technology]}`;
-
-              return (
-                <Tooltip
-                  content={technology}
-                  placement="left"
-                  className="bg-midblue text-darkblue font-semibold"
-                >
-                  <motion.img
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: index * 0.1 }}
-                    key={index} 
-                    src={route && route} 
-                    className="text-sm w-9" 
-                  />
-                </Tooltip>
-              );
-            })}
+          {project?.technologies.map((technology, index) => {
+            const route = `${statics[technology]}`;
+            return (
+              <Tooltip
+                key={index}
+                content={technology}
+                placement="left"
+                className="bg-midblue text-darkblue font-semibold"
+              >
+                <motion.img
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: index * 0.1 }}
+                  src={route}
+                  className="text-sm w-9"
+                />
+              </Tooltip>
+            );
+          })}
         </section>
       </div>
 
-      <Image
-        src={images && images[currentImage]}
-        alt=""
-        className="object-cover h-[58vh] w-full border-2 border-midblue"
-      />
+      <div
+        className="relative w-full"
+        onMouseEnter={() => setShowInfo(true)}
+        onMouseLeave={() => setShowInfo(false)}
+      >
+        <Image
+          src={images && images[currentImage]}
+          alt=""
+          className="object-cover h-[58vh] w-full border-2 border-midblue"
+        />
+        <AnimatePresence>
+          {showInfo && (
+            <motion.div
+              className="absolute inset-0 flex flex-col bg-midblue/80 justify-center items-center text-lightblue z-10 rounded-xl p-5"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <motion.h1
+                className="text-2xl font-bold p-2 bg-darkblue rounded-xl"
+                initial={{ y: -50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                {project?.title}
+              </motion.h1>
+              <motion.p
+                className="text-sm mt-2 text-left py-2 px-4 bg-darkblue rounded-xl"
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                {project?.description}
+              </motion.p>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 };
