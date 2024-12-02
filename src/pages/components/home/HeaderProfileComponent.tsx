@@ -126,18 +126,19 @@ const HeaderProfileComponent = ({
             IT directamente, la automatización de procesos en mi paso por el
             sector financiero hicieron que quisiera profesionalizarme y
             prepararme para este mundo IT que me fascina y me regala a diario un
-            universo de nuevos conocimientos y aprendizajes. la web, lo movil me
-            encantan, me gusta retarme y siempre hacer mejor las cosas.
+            universo de nuevos conocimientos y aprendizajes. El desarrollo web y móvil me
+            encanta, retarme me encanta y siempre hacer mejor las cosas es mi meta
+            en cada nuevo desafio que asumo.
           </motion.span>
         </section>
       </div>
       <section className="col-span-4 flex justify-center items-center">
-        <div className="w-52 h-auto md:w-64 md:h-64 relative">
+        <div className="w-64 md:h-64 relative p-5">
           {/* Imagen de icon2 con eventos de hover */}
           <motion.img
             loading="eager"
             src={statics.icon2}
-            className="w-44 h-auto my-10 md:py-0 md:w-56 md:h-56 self-center justify-self-center"
+            className="w-56 h-56 self-center justify-self-center"
             variants={icon2Variants}
             initial="initial"
             animate="animate"
@@ -154,7 +155,7 @@ const HeaderProfileComponent = ({
                 <motion.img
                   loading="eager"
                   src={statics.cloud}
-                  className="absolute py-5 w-8 md:py-0 md:w-auto -top-2 md:-top-5 -left-7 md:-left-14"
+                  className="absolute py-5 w-8 md:py-0 md:w-10 -top-2 -left-7 md:-left-14"
                   variants={cloudVariants}
                   initial="initial"
                   animate="animate"
@@ -165,7 +166,7 @@ const HeaderProfileComponent = ({
                 <motion.img
                   loading="eager"
                   src={statics.iphone}
-                  className="absolute py-5 w-8 md:py-0 md:w-auto -top-2 md:-top-5 -right-7 md:-right-14"
+                  className="absolute py-5 w-8 md:py-0 md:w-10 -top-2 -right-7 md:-right-14"
                   variants={iphoneVariants}
                   initial="initial"
                   animate="animate"
@@ -176,7 +177,7 @@ const HeaderProfileComponent = ({
                 <motion.img
                   loading="eager"
                   src={statics.web}
-                  className="absolute py-5 w-8 md:py-0 md:w-auto bottom-5 -right-7 md:-right-14"
+                  className="absolute py-5 w-8 md:py-0 md:w-10 bottom-2 -right-7 md:-right-14"
                   variants={webVariants}
                   initial="initial"
                   animate="animate"
@@ -187,7 +188,7 @@ const HeaderProfileComponent = ({
                 <motion.img
                   loading="eager"
                   src={statics.desktop}
-                  className="absolute py-5 w-8 md:py-0 bottom-5 -left-8 md:-left-14"
+                  className="absolute py-5 w-8 md:py-0 md:w-10 bottom-2  -left-7 md:-left-14"
                   variants={desktopVariants}
                   initial="initial"
                   animate="animate"

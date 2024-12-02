@@ -150,3 +150,31 @@ export const tecnologias: Array<Tech> = [
         level: "Intermedio"
     }
 ]
+
+
+export const sections = [
+    {
+      "title": "BACKEND",
+      "technologies": [statics.Django, statics.FastAPI]
+    },
+    {
+      "title": "FRONTEND",
+      "technologies": [statics.angularicon, statics.React, statics.Flutter]
+    },
+    {
+      "title": "LENGUAJES",
+      "technologies": [statics.Python, statics.JS, statics.Dart, statics.Typescript, statics.CSharp]
+    },
+    {
+      "title": "BASES DE DATOS",
+      "technologies": [statics.MongoDB, statics.PostgreSQL, statics.Firebase]
+    },
+    {
+      "title": "OTRAS HERRAMIENTAS",
+      "technologies": [statics.Azure, statics.WebScrapping, statics.Automate, statics.Excel, statics.Git, statics.PlayStore, statics.Tailwind]
+    },
+    {
+      "title": "OTRAS TECNOLOGÍAS CONOCIDAS",
+      "technologies": [statics.PowerBI, statics.Java, statics.Numpy, statics.Pandas, statics.OpenAI]
+    }
+  ]

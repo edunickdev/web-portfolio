@@ -99,19 +99,19 @@ const ImageComponents = () => {
         <AnimatePresence>
           {showInfo && (
             <motion.div
-              className="absolute inset-0 flex flex-col bg-midblue/80 justify-center items-center text-lightblue z-10 rounded-xl p-5"
+              className="absolute inset-0 flex flex-col bg-midblue/80 justify-center items-center text-lightblue z-10 rounded-xl p-7"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <motion.h1
+              <motion.h3
                 className="text-xl md:text-2xl font-bold p-2 bg-darkblue rounded-xl"
                 initial={{ y: -50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
               >
                 {project?.title}
-              </motion.h1>
+              </motion.h3>
               <motion.p
                 className="text-xs md:text-sm mt-2 text-left py-2 px-4 bg-darkblue rounded-xl"
                 initial={{ y: 50, opacity: 0 }}
