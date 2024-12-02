@@ -64,9 +64,9 @@ const HeaderProfileComponent = ({
       className="flex flex-col md:grid md:grid-cols-12 p-5 md:p-10 text-lightblue h-auto md:h-[88vh] bg-darkblue mt-[9.8vh]"
       ref={refs.about}
     >
-      <div className="hidden md:col-span-1"></div>
+      <div className="col-span-1"></div>
       <div className="col-span-6">
-        <section className="flex justify-center items-center">
+        <section className="flex items-center">
           <motion.img
             loading="eager"
             initial={{ x: -50, opacity: 0 }}
