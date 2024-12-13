@@ -120,12 +120,12 @@ const ImageComponents = () => {
               >
                 <Tabs
                   aria-label="Options"
-                  className="text-darkblue"
+                  className="text-darkblue w-52"
                   variant="underlined"
                 >
                   <Tab key="descripcion" title="Descripción">
                     <div className="bg-lightblue text-darkblue font-semibold">
-                        <span className="text-sm">{project?.description}</span>
+                        <span className="text-xs md:text-sm">{project?.description}</span>
                     </div>
                   </Tab>
                   <Tab key="fortalezas" title="Fortalezas">
