@@ -1,4 +1,4 @@
-import { Button, Image, Tooltip } from "@nextui-org/react";
+import { Button, Image, Tab, Tabs, Tooltip } from "@nextui-org/react";
 import { statics } from "../../../config/images";
 import { useState, useEffect } from "react";
 import { useProjects } from "../../../stores/stores";
@@ -105,21 +105,60 @@ const ImageComponents = () => {
               exit={{ opacity: 0 }}
             >
               <motion.h3
-                className="text-xl md:text-2xl font-bold p-2 bg-darkblue rounded-xl"
+                className="text-lg md:text-xl font-bold p-2 bg-darkblue rounded-xl"
                 initial={{ y: -50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
               >
                 {project?.title}
               </motion.h3>
-              <motion.p
-                className="text-xs md:text-sm mt-2 text-left py-2 px-4 bg-darkblue rounded-xl"
+              <motion.div
+                className="text-xs md:text-sm mt-1 text-left py-2 px-4 bg-lightblue rounded-xl h-full w-full m-1"
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
               >
-                {project?.description}
-              </motion.p>
+                <Tabs
+                  aria-label="Options"
+                  className="text-darkblue"
+                  variant="underlined"
+                >
+                  <Tab key="descripcion" title="Descripción">
+                    <div className="bg-lightblue text-darkblue font-semibold">
+                        <span className="text-sm">{project?.description}</span>
+                    </div>
+                  </Tab>
+                  <Tab key="fortalezas" title="Fortalezas">
+                    <div className="bg-lightblue">
+                        <span className="text-sm text-darkblue">{project?.strength}</span>
+                    </div>
+                  </Tab>
+                  <Tab key="conocimientos" title="Nuevos Conocimientos">
+                    <div className="bg-lightblue text-darkblue">
+                        <span className="text-sm">{project?.learned}</span>
+                    </div>
+                  </Tab>
+                </Tabs>
+              </motion.div>
+              {project.deploy ? (
+                <motion.div
+                  className="text-xs md:text-sm p-2 flex justify-around gap-10 rounded-xl bottom-0 left-0"
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                  about="_blank"
+                >
+                  {project.deploy.includes("https") ? (<a
+                    href={project.deploy}
+                    className="bg-darkblue py-1 px-2 rounded-lg"
+                  >
+                    Visitar
+                  </a>) : null}
+                  <span className="bg-darkblue py-1 px-2 rounded-lg">
+                    <strong>Novedades:</strong> {project.status}
+                  </span>
+                </motion.div>
+              ) : null}
             </motion.div>
           )}
         </AnimatePresence>

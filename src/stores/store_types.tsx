@@ -7,6 +7,10 @@ export interface Project {
   technologies: string[];
   name: string;
   description: string;
+  deploy?: string;
+  learned?: string;
+  strength?: string;
+  status?: string;
 }
 
 export interface Projects {

@@ -1,4 +1,5 @@
 import HeaderProfileComponent from "../components/home/HeaderProfileComponent";
+import FooterComponente from "../shared/FooterComponent";
 import AboutMeScreen from "./AboutMeScreen";
 import KnowledgesScreen from "./KnowledgesScreen";
 import MyProjectsScreen from "./MyProjectsScreen";
@@ -11,6 +12,7 @@ const HomeScreen = ({ refs }: { refs: Record<string, React.RefObject<HTMLDivElem
         <AboutMeScreen refs={refs} />
         <MyProjectsScreen refs={refs} />
         <KnowledgesScreen refs={refs} />
+        <FooterComponente />
       </div>
     </>
   );

@@ -27,7 +27,7 @@ const MyProjectsScreen = ({
 
   useEffect(() => {
     fetchProjects();
-  }, [projects]); // Llamamos a fetchProjects solo una vez al montar el componente
+  }, [projects]);
 
   return (
     <section
@@ -81,7 +81,7 @@ const MyProjectsScreen = ({
             transition={{ duration: 1, delay: 0.2 }}
             className="hidden md:block col-span-4"
           >
-            <div className="flex flex-col gap-y-3 overflow-x-visible h-[55vh]">
+            <div className="flex flex-col gap-y-3 overflow-x-visible h-[55vh] pt-5">
               {projects.map((project, index) => (
                 <motion.div
                   key={project.id_project}
@@ -91,7 +91,7 @@ const MyProjectsScreen = ({
                     duration: index * 0.1,
                     delay: 0.3 + index * 0.1,
                   }}
-                  className="bg-lightblue h-12 py-2 pl-16 pr-3 hover:pl-[4.5rem] hover:pr-9 w-[16rem] lg:w-[20rem] hover:w-[17rem] lg:hover:w-[20.8rem] transition-all duration-200 hover:bg-midblue hover:text-lightblue flex items-center text-darkblue text-xl font-semibold rounded-tr-md rounded-br-md cursor-pointer"
+                  className="bg-lightblue h-12 py-2 pl-28 pr-3 hover:pl-[8rem] hover:pr-9 w-[20rem] lg:w-[22rem] hover:w-[23rem] lg:hover:w-[24rem] transition-all duration-200 hover:bg-midblue hover:text-lightblue flex items-center text-darkblue text-xl font-semibold rounded-tr-md rounded-br-md cursor-pointer"
                   onClick={() => setProject(index)}
                 >
                   {project.name}
@@ -116,7 +116,7 @@ const MyProjectsScreen = ({
               initial={{ width: 0, opacity: 0 }}
               animate={{ width: "20px", opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="hidden md:block w-5 h-[62vh] bg-midblue rounded-tl-md rounded-bl-md"
+              className="hidden md:block w-5 h-[62vh] -mt-[0.4rem] -ml-1 bg-midblue rounded-tl-md rounded-bl-md"
             ></motion.div>
           </div>
         </>

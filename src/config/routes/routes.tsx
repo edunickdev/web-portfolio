@@ -21,14 +21,12 @@ const MyRoutes = () => {
     const element = refMap[section]?.current;
   
     if (element) {
-      // Hacer scroll hacia la sección
       element.scrollIntoView({ behavior: "smooth" });
   
-      // Ajustar el desplazamiento para corregir el posicionamiento
-      const offset = -100; // Ajusta este valor según el tamaño de tu navbar
+      const offset = -100;
       setTimeout(() => {
         window.scrollBy({ top: offset, behavior: "smooth" });
-      }, 700); // Ajusta el tiempo si es necesario
+      }, 700);
     }
   };
   

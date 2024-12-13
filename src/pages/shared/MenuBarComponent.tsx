@@ -59,17 +59,17 @@ const MenuBarComponent = ({ onScroll }: { onScroll: (section: string) => void })
       </div>
 
       {/* Menú de navegación para pantallas grandes */}
-      <section className="hidden md:flex md:col-span-6 lg:col-span-7 gap-x-4 justify-self-end">
-        <Button variant="bordered" onPress={() => onScroll("about")} className="text-lightblue text-xl lg:text-2xl hover:text-midblue transition-all duration-250 cursor-pointer z-10 bg-transparent border-none">
+      <section className="hidden md:flex md:col-span-6 lg:col-span-7 gap-x-2 justify-self-end">
+        <Button variant="bordered" onPress={() => onScroll("about")} className="text-lightblue text-lg lg:text-xl hover:text-midblue transition-all duration-250 cursor-pointer z-10 bg-transparent border-none">
           Sobre mí
         </Button>
-        <Button variant="bordered" onPress={() => onScroll("studies")} className="text-lightblue text-xl lg:text-2xl hover:text-midblue transition-all duration-250 cursor-pointer z-10 bg-transparent border-none">
+        <Button variant="bordered" onPress={() => onScroll("studies")} className="text-lightblue text-lg lg:text-xl hover:text-midblue transition-all duration-250 cursor-pointer z-10 bg-transparent border-none">
           Estudios
         </Button>
-        <Button variant="bordered" onPress={() => onScroll("projects")} className="text-lightblue text-xl lg:text-2xl hover:text-midblue transition-all duration-250 cursor-pointer z-10 bg-transparent border-none">
+        <Button variant="bordered" onPress={() => onScroll("projects")} className="text-lightblue text-lg lg:text-xl hover:text-midblue transition-all duration-250 cursor-pointer z-10 bg-transparent border-none">
           Proyectos
         </Button>
-        <Button variant="bordered" onPress={() => onScroll("technologies")} className="text-lightblue text-xl lg:text-2xl hover:text-midblue transition-all duration-250 cursor-pointer z-10 bg-transparent border-none">
+        <Button variant="bordered" onPress={() => onScroll("technologies")} className="text-lightblue text-lg lg:text-xl hover:text-midblue transition-all duration-250 cursor-pointer z-10 bg-transparent border-none">
           Tecnologías
         </Button>
       </section>

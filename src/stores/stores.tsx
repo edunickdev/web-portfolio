@@ -27,10 +27,8 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
 
     const currentKey = get().apiKey;
 
-    const response = await axios.get(
-      `${get().baseUrl}/documents/search?ref=${currentKey}`
-    );
-
+    const response = await axios.get(`${get().baseUrl}/documents/search?ref=${currentKey}`);
+    
     const filteredProjects = response.data.results.filter(
       (project: { type: string }) => project.type === "project"
     );
@@ -44,7 +42,6 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
     );
 
     const others = otherCourses.map(
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (course: any) => {
         const newCourse = {
           id_course: course.id,
@@ -57,7 +54,6 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
     );
 
     const courses = filteredCourses.map(
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (course: any) => {
         const newCourse = {
           id_course: course.id,
@@ -69,8 +65,10 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
       }
     );
 
+    console.log(filteredProjects);
+    
+
     const projects = filteredProjects.map(
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (project: any) => {
         const techs = [];
         for (let i = 1; i < 7; i++) {
@@ -96,6 +94,10 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
           technologies: techs,
           name: project.data.title[0].text,
           description: project.data.desciption[0].text,
+          deploy: project.data.deploy[0].text,
+          learned: project.data.learned[0].text,
+          strength: project.data.strength[0].text,
+          status: project.data.status[0].text,
         };
 
         return newProject;

@@ -28,7 +28,7 @@ const KnowledgesScreen = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="col-span-10 flex flex-wrap px-3 py-14 gap-2 md:gap-5"
+          className="col-span-10 flex flex-wrap justify-between px-3 py-14 gap-2 md:gap-5"
         >
           { 
             sections.map((section, index) => (
@@ -37,14 +37,14 @@ const KnowledgesScreen = ({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: index * 0.3 }}
-                className="bg-darkblue rounded-xl p-3"
+                className="bg-darkblue rounded-xl py-2 px-3 w-full flex flex-col items-center md:block md:w-auto"
               >
-                <h2 className="text-medium md:text-2xl text-midblue font-semibold md:text-start w-full">
+                <h2 className="md:text-2xl text-midblue font-semibold text-center md:text-start w-full">
                   {section.title}
                 </h2>
                 <div className="flex">
                   {section.technologies.map((technology, index) => (
-                    <img key={index} className="w-[40px] md:w-[70px]" src={technology} alt="" />
+                    <img key={index} className="w-[35px] md:w-[70px]" src={technology} alt="" />
                   ))}
                 </div>
               </motion.div>
