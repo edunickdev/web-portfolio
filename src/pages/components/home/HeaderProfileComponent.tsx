@@ -61,11 +61,11 @@ const HeaderProfileComponent = ({
 
   return (
     <div
-      className="flex flex-col md:grid md:grid-cols-12 p-5 md:p-10 text-lightblue h-auto md:h-[88vh] bg-darkblue mt-[9.8vh]"
+      className="flex flex-col md:grid md:grid-cols-12 p-10 text-lightblue h-auto min-h-[85vh] bg-darkblue mt-[9.8vh]"
       ref={refs.about}
     >
       <div className="col-span-1"></div>
-      <div className="col-span-6">
+      <div className="col-span-6 flex flex-col justify-center">
         <section className="flex items-center">
           <motion.img
             loading="eager"
@@ -73,7 +73,7 @@ const HeaderProfileComponent = ({
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
             src={statics.fotoPerfil}
-            className="w-36 md:w-24 h-32 md:h-32 mt-4 rounded-lg"
+            className="w-36 md:w-24 h-32 md:h-32 mt-4 rounded-lg ml-6"
           />
           <motion.div
             initial={{ x: -50, opacity: 0 }}
@@ -100,15 +100,16 @@ const HeaderProfileComponent = ({
               speed={90}
               cursor={false}
               className="font-semibold text-sm md:text-lg text-midblue"
-              sequence={["Microsoft Azure arquitecto certificado"]}
+              sequence={["Microsoft Azure Architect Certified"]}
             />
-            <section className="flex flex-col">
-              <a href="www.linkedin.com/in/eduard-nicolas-sarmiento-herrera" className="text-sm md:text-lg">Ver mi Github</a>
-              <span className="text-sm md:text-lg">Ver mi LinkedIn</span>
+            <section className="flex gap-x-4 pt-2">
+              <a href="https://github.com/edunickdev" target="_blank" className="text-sm md:text-lg hover:text-midblue transition-all duration-250">Ver Github</a>
+              <a href="https://www.linkedin.com/in/eduard-nicolas-sarmiento-herrera" target="_blank" className="text-sm md:text-lg hover:text-midblue transition-all duration-250">Ver LinkedIn</a>
+              <a href="../../../../public/cv.pdf" target="_blank" className="text-sm md:text-lg hover:text-midblue transition-all duration-250">Descargar CV</a>
             </section>
           </motion.div>
         </section>
-        <section className="flex flex-col pt-5 md:pt-0 md:pr-14 justify-between items-start">
+        <section className="flex flex-col m-5 md:mt-0 pt-5 md:pt-0 md:pr-14 justify-between items-start">
           <motion.h2
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}

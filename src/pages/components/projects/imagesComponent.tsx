@@ -44,7 +44,7 @@ const ImageComponents = () => {
 
   return (
     <div className="flex flex-col md:flex-row h-full w-full justify-between items-center gap-x-2">
-      <div className="flex md:flex-col justify-start items-center h-full p-2 gap-x-5 md:gap-x-0">
+      <div className="flex md:flex-col justify-start items-center h-full p-1 md:p-2 gap-x-5 md:gap-x-0">
         <section className="flex justify-center items-center gap-x-1">
           <Button
             isIconOnly
@@ -78,7 +78,7 @@ const ImageComponents = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: index * 0.1 }}
                   src={route}
-                  className="text-sm w-9"
+                  className="text-sm w-8 md:w-9"
                 />
               </Tooltip>
             );
@@ -120,22 +120,22 @@ const ImageComponents = () => {
               >
                 <Tabs
                   aria-label="Options"
-                  className="text-darkblue w-52"
+                  className="text-darkblue w-52 md:w-auto"
                   variant="underlined"
                 >
                   <Tab key="descripcion" title="Descripción">
-                    <div className="bg-lightblue text-darkblue font-semibold">
+                    <div className="bg-lightblue text-darkblue">
                         <span className="text-xs md:text-sm">{project?.description}</span>
                     </div>
                   </Tab>
                   <Tab key="fortalezas" title="Fortalezas">
                     <div className="bg-lightblue">
-                        <span className="text-sm text-darkblue">{project?.strength}</span>
+                        <span className="text-xs md:text-sm text-darkblue">{project?.strength}</span>
                     </div>
                   </Tab>
                   <Tab key="conocimientos" title="Nuevos Conocimientos">
                     <div className="bg-lightblue text-darkblue">
-                        <span className="text-sm">{project?.learned}</span>
+                        <span className="text-xs md:text-sm">{project?.learned}</span>
                     </div>
                   </Tab>
                 </Tabs>
@@ -150,6 +150,7 @@ const ImageComponents = () => {
                 >
                   {project.deploy.includes("https") ? (<a
                     href={project.deploy}
+                    target="_blank"
                     className="bg-darkblue py-1 px-2 rounded-lg"
                   >
                     Visitar

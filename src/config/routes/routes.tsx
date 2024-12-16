@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomeScreen from '../../pages/screens/HomeScreen';
 import MenuBarComponent from '../../pages/shared/MenuBarComponent';
 import React, { useRef } from 'react';
-
+import PrivacyPolicyScreen from '../../pages/screens/PrivacyPolicyScreen';
 
 const MyRoutes = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -17,34 +17,42 @@ const MyRoutes = () => {
       studies: studiesRef,
       technologies: techsRef,
     };
-  
+
     const element = refMap[section]?.current;
-  
+
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-  
-      const offset = -100;
-      setTimeout(() => {
-        window.scrollBy({ top: offset, behavior: "smooth" });
-      }, 700);
+      const navbarHeight = 100; // Ajusta según la altura de tu navbar
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
     }
   };
-  
 
   return (
     <Router>
       <MenuBarComponent onScroll={handleScroll} />
-        <Routes>
-          <Route path="/" element={<HomeScreen refs={{
-            about: aboutRef,
-            projects: projectsRef,
-            studies: studiesRef,
-            technologies: techsRef,
-          }} />} />
-        </Routes>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <HomeScreen
+              refs={{
+                about: aboutRef,
+                projects: projectsRef,
+                studies: studiesRef,
+                technologies: techsRef,
+              }}
+            />
+          }
+        />
+        <Route path="/privacypolicy" element={<PrivacyPolicyScreen />} />
+      </Routes>
     </Router>
   );
-}
+};
 
 export default MyRoutes;
-

@@ -31,11 +31,11 @@ const MyProjectsScreen = ({
 
   return (
     <section
-      className="flex flex-col md:grid md:grid-cols-12 h-auto md:h-[90vh] bg-darkblue gap-x-20"
+      className="flex flex-col md:grid md:grid-cols-12 h-auto min-h-[85vh] py-10 bg-darkblue gap-x-20"
       ref={ref}
     >
       <h2
-        className="col-span-12 text-center text-2xl md:text-4xl text-lightblue mt-8"
+        className="col-span-12 text-center text-2xl md:text-4xl text-lightblue my-5"
         ref={refs.projects}
       >
         Proyectos
@@ -63,7 +63,7 @@ const MyProjectsScreen = ({
                     key={project.id_project}
                     onPress={() => {
                       setProject(index);
-                      setIsOpened(false); // Cerramos el menú después de seleccionar
+                      setIsOpened(false);
                     }}
                     className="block w-full text-left px-4 py-2 hover:bg-midblue transition-all duration-250 cursor-pointer bg-transparent border-none text-lightblue"
                   >

@@ -7,7 +7,7 @@ import MyProjectsScreen from "./MyProjectsScreen";
 const HomeScreen = ({ refs }: { refs: Record<string, React.RefObject<HTMLDivElement>> }) => {
   return (
     <>
-      <div className="col-span-10 flex flex-col h-auto justify-around">
+      <div className="col-span-10 flex flex-col h-auto justify-around font-nunito">
         <HeaderProfileComponent refs={refs} />
         <AboutMeScreen refs={refs} />
         <MyProjectsScreen refs={refs} />

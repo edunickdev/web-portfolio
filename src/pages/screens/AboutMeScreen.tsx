@@ -23,7 +23,7 @@ const AboutMeScreen = ({ refs }: { refs: Record<string, React.RefObject<HTMLDivE
   }, []);
 
   return (
-    <div className="grid grid-cols-12 h-auto md:h-[90vh] justify-center items-start" ref={ref} >
+    <div className="grid grid-cols-12 h-auto py-10 justify-center items-start" ref={ref} >
       <div className="col-span-12 flex flex-col justify-center items-center md:grid md:grid-cols-12">
         <h2 className="col-span-12 text-2xl md:text-4xl text-center text-darkblue font-bold pt-8 pb-5" ref={refs.studies}>
           Estudios y Certificaciones
@@ -70,7 +70,7 @@ const AboutMeScreen = ({ refs }: { refs: Record<string, React.RefObject<HTMLDivE
             transition={{ duration: 1, delay: 1.5 }}
             className="col-span-10 h-auto md:h-[58vh] flex flex-col md:grid md:grid-cols-10 transition-all duration-300">
             {selectedFilter === "Microsoft" ? <h2 className="col-span-10 text-center mt-5 md:mt-0 md:text-end text-darkblue text-sm md:text-medium font-semibold">Haz click en los escudos para ver los certificados</h2> : null}
-            <div className="col-span-10 flex flex-wrap items-start justify-center gap-3 md:gap-0 md:gap-x-3 p-10">
+            <div className="col-span-10 flex flex-wrap items-start justify-center gap-5 p-10">
               {selectedFilter === "Complementarios"
                 ? listStudies.map((study, index) => (
                   <Tooltip content={study.title} offset={-1} showArrow className="text-darkblue text-medium">
@@ -79,7 +79,7 @@ const AboutMeScreen = ({ refs }: { refs: Record<string, React.RefObject<HTMLDivE
                       initial={{ opacity: 0, x: 30 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.05 }}
-                      className="flex flex-col w-32 h-[8.2rem] justify-center items-center p-2 bg-midblue rounded-md overflow-hidden shadow-md shadow-darkblue"
+                      className="flex flex-col w-36 h-[8.2rem] justify-center items-center p-2 bg-lightblue rounded-md overflow-hidden shadow-2xl shadow-midblue"
                     >
                       <h2 className="text-center text-darkblue font-bold text-small overflow-clip line-clamp-3">
                         {study.title}
