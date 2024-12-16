@@ -47,8 +47,11 @@ const KnowledgesScreen = ({
               </h2>
               <div className="flex">
                 {section.technologies.map((technology, index) => {
-                  const result = technology.split("images")[1].split("/")[1].split(".")[0]
-                  return (<Tooltip content={result} placement="bottom" className="p-2 bg-lightblue text-darkblue font-semibold">
+                  const p1 = technology.split("images")[1]
+                  const p2 = p1 && p1.split("/")[1]
+                  const p3 = p2 && p2.split(".")[0]
+
+                  return (<Tooltip key={index} content={p3} placement="bottom" className="p-2 bg-lightblue text-darkblue font-semibold">
                     <img
                       key={index}
                       className="w-[40px] md:w-[68px]"

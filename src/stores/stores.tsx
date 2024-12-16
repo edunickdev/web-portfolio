@@ -64,8 +64,6 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
         return newCourse;
       }
     );
-
-    console.log(filteredProjects);
     
 
     const projects = filteredProjects.map(
