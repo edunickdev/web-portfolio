@@ -155,26 +155,129 @@ export const tecnologias: Array<Tech> = [
 export const sections = [
     {
       "title": "BASES DE DATOS",
-      "technologies": [statics.MongoDB, statics.PostgreSQL, statics.Firebase]
+      "technologies": [
+        {
+            text: "MongoDB",
+            path: statics.MongoDB
+        }, {
+            text: "PostgreSQL",
+            path: statics.PostgreSQL
+        }, {
+            text: "Firebase",
+            path: statics.Firebase
+        }]
     },
     {
         "title": "OTRAS HERRAMIENTAS",
-        "technologies": [statics.Azure, statics.WebScrapping, statics.Automate, statics.Excel, statics.Git, statics.PlayStore, statics.Tailwind]
+        "technologies": [
+            {
+                text: "Azure", 
+                path: statics.Azure,
+            },
+            {
+                text: "Selenium",
+                path: statics.WebScrapping
+            },
+            {
+                text: "PowerAutomate", 
+                path: statics.Automate
+            },
+            {
+                text: "Excel",
+                path: statics.Excel
+            },
+            {
+                text: "Git",
+                path: statics.Git
+            },
+            {
+                text: "Play Store", 
+                path: statics.PlayStore
+            },
+            {
+                text: "TailWind",
+                path: statics.Tailwind
+            }
+        ]
     },
     {
         "title": "FRONTEND",
-        "technologies": [statics.angularicon, statics.React, statics.Flutter]
+        "technologies": [
+            {
+                text: "Angular",
+                path: statics.angularicon
+            }, 
+            {
+                text: "React",
+                path: statics.React
+            },
+            {
+                text: "Flutter",
+                path: statics.Flutter
+            }
+        ]
     },
     {
       "title": "BACKEND",
-      "technologies": [statics.Django, statics.FastAPI]
+      "technologies": [
+        {
+            text: "Django",
+            path: statics.Django
+        },
+        {
+            text: "FastAPI",
+            path: statics.FastAPI
+        }
+    ]
     },
     {
       "title": "LENGUAJES",
-      "technologies": [statics.Python, statics.JS, statics.Dart, statics.Typescript, statics.CSharp]
+      "technologies": [
+        {
+            text: "Python",
+            path: statics.Python
+        },
+        {
+            text: "JavaScript",
+            path: statics.JS
+        },
+        {
+            text: "Dart",
+            path: statics.Dart
+        },
+        {
+            text: "TypeScript",
+            path: statics.Typescript
+        },
+        {
+            text: "C#",
+            path: statics.CSharp
+        }
+      ]
     },
     {
       "title": "OTRAS TECNOLOGÍAS CONOCIDAS",
-      "technologies": [statics.PowerBI, statics.Java, statics.Numpy, statics.Pandas, statics.OpenAI]
+      "technologies": [
+        {
+            text: "PowerBI",
+            path: statics.PowerBI
+        },
+        {
+            text: "Java",
+            path: statics.Java
+        },
+        {
+            text: "Numpy",
+            path: statics.Numpy
+        },
+        {
+            text: "Pandas",
+            path: statics.Pandas
+        },
+        {
+            text: "Open AI",
+            path: statics.OpenAI
+        }
+      ]
     }
   ]

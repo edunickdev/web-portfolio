@@ -46,20 +46,15 @@ const KnowledgesScreen = ({
                 {section.title}
               </h2>
               <div className="flex">
-                {section.technologies.map((technology, index) => {
-                  const p1 = technology.split("images")[1]
-                  const p2 = p1 && p1.split("/")[1]
-                  const p3 = p2 && p2.split(".")[0]
-
-                  return (<Tooltip key={index} content={p3} placement="bottom" className="p-2 bg-lightblue text-darkblue font-semibold">
+                {section.technologies.map((technology, index) => (
+                <Tooltip key={index} content={technology.text} placement="bottom" className="p-2 bg-lightblue text-darkblue font-semibold">
                     <img
                       key={index}
                       className="w-[40px] md:w-[68px]"
-                      src={technology}
+                      src={technology.path}
                       alt=""
                     />
-                  </Tooltip>)
-                })}
+                  </Tooltip>))}
               </div>
             </motion.div>
           ))}
