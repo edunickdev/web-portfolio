@@ -11,6 +11,7 @@ export const useNavMenu = create<menuInterface>((set) => ({
 }));
 
 export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
+  cv_link: "",
   projects: [],
   selected_project: 0,
   platzi_courses: [],
@@ -32,6 +33,12 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
     }
     
     const response = await axios.get(`${get().baseUrl}/documents/search?ref=${currentKey}`);
+
+    const cv_link = response.data.results.filter(
+      (project: { type: string }) => project.type === "cv"
+    );
+    
+    set({ cv_link: cv_link[0].data.cv_link.url });
     
     const filteredProjects = response.data.results.filter(
       (project: { type: string }) => project.type === "project"

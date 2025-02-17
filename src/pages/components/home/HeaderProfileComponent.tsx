@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { statics } from "../../../config/images";
 import { TypeAnimation } from 'react-type-animation';
+import { useProjects } from "../../../stores/stores";
 
 const HeaderProfileComponent = ({
   refs,
@@ -40,6 +41,8 @@ const HeaderProfileComponent = ({
     animate: { x: 0, opacity: 1 },
     exit: { y: 50, opacity: 0 },
   };
+
+  const cv_link = useProjects((state) => state.cv_link);
 
   useEffect(() => {
     if (!hasAnimated) {
@@ -105,7 +108,7 @@ const HeaderProfileComponent = ({
             <section className="flex gap-x-4 pt-2">
               <a href="https://github.com/edunickdev" target="_blank" className="text-sm md:text-lg hover:text-midblue transition-all duration-250 text-center z-10">Ver Github</a>
               <a href="https://www.linkedin.com/in/eduard-nicolas-sarmiento-herrera" target="_blank" className="text-sm md:text-lg hover:text-midblue transition-all duration-250 text-center z-10">Ver LinkedIn</a>
-              <a href="../../../../public/cv.pdf" target="_blank" className="text-sm md:text-lg hover:text-midblue transition-all duration-250 text-center z-10">Descargar CV</a>
+              <a href={cv_link && cv_link} target="_blank" className="text-sm md:text-lg hover:text-midblue transition-all duration-250 text-center z-10">Descargar CV</a>
             </section>
           </motion.div>
         </section>

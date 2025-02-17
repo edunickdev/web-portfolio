@@ -14,6 +14,7 @@ export interface Project {
 }
 
 export interface Projects {
+  cv_link: string;
   apiKey: string;
   projects: Project[];
   selected_project: number;
