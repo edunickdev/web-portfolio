@@ -149,12 +149,12 @@ const ImageComponents = () => {
                   about="_blank"
                 >
                   {project.deploy.includes("https") ? (<a
-                    href={project.deploy}
+                    href={project.deploy && project.deploy}
                     target="_blank"
                     className="bg-darkblue py-1 px-2 rounded-lg"
                   >
                     Visitar
-                  </a>) : null}
+                  </a>) : ""}
                   <span className="bg-darkblue py-1 px-2 rounded-lg">
                     <strong>Novedades:</strong> {project.status}
                   </span>

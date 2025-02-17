@@ -23,10 +23,16 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
       return;
     }
 
-    get().fetchAPIKey();
+    await get().fetchAPIKey();
 
     const currentKey = get().apiKey;
 
+    if (!currentKey) {
+      return;
+    }
+
+    console.log(`${get().baseUrl}/documents/search?ref=${currentKey}`);
+    
     const response = await axios.get(`${get().baseUrl}/documents/search?ref=${currentKey}`);
     
     const filteredProjects = response.data.results.filter(
@@ -92,7 +98,7 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
           technologies: techs,
           name: project.data.title[0].text,
           description: project.data.desciption[0].text,
-          deploy: project.data.deploy[0].text,
+          deploy: project.data.deploy?.[0]?.text ?? "Sin información",
           learned: project.data.learned[0].text,
           strength: project.data.strength[0].text,
           status: project.data.status[0].text,
@@ -107,15 +113,10 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
     set({ projects });
     set({ loading: true });
   },
-  fetchAPIKey: () => {
-    axios
-      .get(`${get().baseUrl}`)
-      .then((response) => {
-        set({ apiKey: response.data.refs[0].ref });
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+  fetchAPIKey: async () => {
+    let response = await axios.get(`${get().baseUrl}`)
+
+    set({ apiKey: response.data.refs[0].ref });
   },
   selectProject: (index: number) => {
     set({ selected_project: index });
