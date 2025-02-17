@@ -30,8 +30,6 @@ export const useProjects = create<Projects & ProjectsActions>((set, get) => ({
     if (!currentKey) {
       return;
     }
-
-    console.log(`${get().baseUrl}/documents/search?ref=${currentKey}`);
     
     const response = await axios.get(`${get().baseUrl}/documents/search?ref=${currentKey}`);
     
