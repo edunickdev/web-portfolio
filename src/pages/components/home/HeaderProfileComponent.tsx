@@ -103,9 +103,9 @@ const HeaderProfileComponent = ({
               sequence={["Microsoft Azure Architect Certified"]}
             />
             <section className="flex gap-x-4 pt-2">
-              <a href="https://github.com/edunickdev" target="_blank" className="text-sm md:text-lg hover:text-midblue transition-all duration-250 text-center">Ver Github</a>
-              <a href="https://www.linkedin.com/in/eduard-nicolas-sarmiento-herrera" target="_blank" className="text-sm md:text-lg hover:text-midblue transition-all duration-250 text-center">Ver LinkedIn</a>
-              <a href="../../../../public/cv.pdf" target="_blank" className="text-sm md:text-lg hover:text-midblue transition-all duration-250 text-center">Descargar CV</a>
+              <a href="https://github.com/edunickdev" target="_blank" className="text-sm md:text-lg hover:text-midblue transition-all duration-250 text-center z-10">Ver Github</a>
+              <a href="https://www.linkedin.com/in/eduard-nicolas-sarmiento-herrera" target="_blank" className="text-sm md:text-lg hover:text-midblue transition-all duration-250 text-center z-10">Ver LinkedIn</a>
+              <a href="../../../../public/cv.pdf" target="_blank" className="text-sm md:text-lg hover:text-midblue transition-all duration-250 text-center z-10">Descargar CV</a>
             </section>
           </motion.div>
         </section>
