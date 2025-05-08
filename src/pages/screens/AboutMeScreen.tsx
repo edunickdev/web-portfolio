@@ -8,6 +8,9 @@ const AboutMeScreen = ({ refs }: { refs: Record<string, React.RefObject<HTMLDivE
   const [listStudies, setListStudies] = useState(formalStudies);
   const [selectedFilter, setSelectedFilter] = useState("Formal");
 
+  console.log("listStudies", listStudies);
+  
+
   const handleStudies = (type: string) => {
     setSelectedFilter(type);
     setListStudies(formalStudies.filter((study) => study.type === type));

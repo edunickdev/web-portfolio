@@ -103,7 +103,7 @@ const HeaderProfileComponent = ({
               speed={90}
               cursor={false}
               className="font-semibold text-sm md:text-lg text-midblue"
-              sequence={["Microsoft Azure Architect Certified"]}
+              sequence={["Microsoft Azure Developer Associate"]}
             />
             <section className="flex gap-x-4 pt-2">
               <a href="https://github.com/edunickdev" target="_blank" className="text-sm md:text-lg hover:text-midblue transition-all duration-250 text-center z-10">Ver Github</a>
@@ -118,7 +118,7 @@ const HeaderProfileComponent = ({
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.6 }}
             className="mt-8 font-semibold text-xl md:text-2xl">
-            Una breve historia sobre mí y cómo llegué al mundo IT
+             Innovador y Apasionado por la Tecnología
           </motion.h2>
           <motion.span
             initial={{ x: 50, opacity: 0 }}
@@ -126,13 +126,10 @@ const HeaderProfileComponent = ({
             transition={{ delay: 1.2 }}
             className="mt-5 md:pr-10 text-small md:text-lg"
           >
-            Con más de 10 años de experiencia laboral, 2 de ellos en el sector
-            IT directamente, la automatización de procesos en mi paso por el
-            sector financiero hicieron que quisiera profesionalizarme y
-            prepararme para este mundo IT que me fascina y me regala a diario un
-            universo de nuevos conocimientos y aprendizajes. El desarrollo web y móvil me
-            encanta, retarme me encanta y siempre hacer mejor las cosas es mi meta
-            en cada nuevo desafio que asumo.
+            El código es mi herramienta y la innovación mi motor. 
+            Desde aplicaciones móviles hasta soluciones en la nube, 
+            disfruto cada oportunidad de transformar ideas en productos funcionales. 
+            Mi misión es clara: utilizar la tecnología para mejorar la vida de las personas.
           </motion.span>
         </section>
       </div>

@@ -45,23 +45,24 @@ export const formalStudies: Array<Study> = [
         image: statics.az104,
         url: "https://learn.microsoft.com/api/credentials/share/es-es/89344633/42ABE94689BFCAC9?sharingId=FFEA776B4BCDB204"
     },
-    // {
-    //     title: "Microsoft Azure Developer",
-    //     institution: "Microsoft",
-    //     semester: "Certificado",
-    //     description: "2024",
-    //     type: "Microsoft",
-    //     image: statics.az104,
-    // },
     {
-        title: "Microsoft Azure Solutions Architect",
+        title: "Microsoft Azure Developer",
         institution: "Microsoft",
         semester: "Certificado",
         description: "",
         type: "Microsoft",
-        image: statics.az305,
-        url: "https://learn.microsoft.com/api/credentials/share/es-es/89344633/79FC32567C84A85C?sharingId=FFEA776B4BCDB204"
+        image: statics.az204,
+        url: "https://learn.microsoft.com/api/credentials/share/es-es/89344633/47A773528089A70?sharingId=FFEA776B4BCDB204"
     },
+    // {
+    //     title: "Microsoft Azure Solutions Architect",
+    //     institution: "Microsoft",
+    //     semester: "Certificado",
+    //     description: "",
+    //     type: "Microsoft",
+    //     image: statics.az305,
+    //     url: "https://learn.microsoft.com/api/credentials/share/es-es/89344633/79FC32567C84A85C?sharingId=FFEA776B4BCDB204"
+    // },
     {
         title: "Microsoft Azure Data Engineer",
         institution: "Microsoft",
