@@ -1,8 +1,10 @@
 import { Button } from "@nextui-org/react";
 import { useProjects, useTheme } from "../../stores/stores";
+import { useRecruiterMatch } from "../../stores/recruiterMatchStore";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { FiSun, FiMoon, FiMenu, FiX } from "react-icons/fi";
+import { HiOutlineSparkles } from "react-icons/hi2";
 import { MotionDiv, MotionNav, AnimatePresence } from "../../config/motion";
 
 const MenuBarComponent = ({
@@ -16,6 +18,7 @@ const MenuBarComponent = ({
 
   const fetchProjects = useProjects((state) => state.fetchProjects);
   const { isDark, toggleTheme, initTheme } = useTheme();
+  const openMatchModal = useRecruiterMatch((state) => state.openModal);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -76,6 +79,15 @@ const MenuBarComponent = ({
                 {item.label}
               </Button>
             ))}
+            <Button
+              variant="flat"
+              onPress={openMatchModal}
+              className="bg-gradient-accent dark:bg-gradient-accent-dark text-white font-semibold text-sm px-4 rounded-full
+                hover:shadow-glow transition-all duration-300"
+              startContent={<HiOutlineSparkles size={16} />}
+            >
+              Match
+            </Button>
           </div>
 
           {/* Theme Toggle */}
@@ -139,6 +151,24 @@ const MenuBarComponent = ({
                   </Button>
                 </MotionDiv>
               ))}
+              <MotionDiv
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navItems.length * 0.05 }}
+              >
+                <Button
+                  variant="flat"
+                  onPress={() => {
+                    openMatchModal();
+                    toggleMenu();
+                  }}
+                  className="w-full justify-start bg-gradient-accent dark:bg-gradient-accent-dark text-white
+                    font-semibold text-base py-3 rounded-xl"
+                  startContent={<HiOutlineSparkles size={18} />}
+                >
+                  ¿Hacemos Match?
+                </Button>
+              </MotionDiv>
             </div>
           </MotionDiv>
         )}

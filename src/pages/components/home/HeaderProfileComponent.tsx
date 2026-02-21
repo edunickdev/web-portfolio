@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   MotionImg,
   MotionDiv,
@@ -11,14 +11,11 @@ import {
 import { statics } from "../../../config/images";
 import { TypeAnimation } from "react-type-animation";
 import { useProjects } from "../../../stores/stores";
+import { useRecruiterMatch } from "../../../stores/recruiterMatchStore";
 import { FiGithub, FiLinkedin, FiDownload } from "react-icons/fi";
-import {
-  SiFlutter,
-  SiPython,
-  SiReact,
-  SiGooglecloud,
-  SiMicrosoftazure,
-} from "react-icons/si";
+import { HiOutlineSparkles } from "react-icons/hi2";
+import { SiFlutter, SiPython, SiReact, SiGooglecloud } from "react-icons/si";
+import { VscAzure } from "react-icons/vsc";
 
 const HeaderProfileComponent = ({
   refs,
@@ -28,6 +25,7 @@ const HeaderProfileComponent = ({
   const [isHovered, setIsHovered] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
   const cv_link = useProjects((state) => state.cv_link);
+  const openMatchModal = useRecruiterMatch((state) => state.openModal);
 
   useEffect(() => {
     if (!hasAnimated) {
@@ -48,7 +46,7 @@ const HeaderProfileComponent = ({
     { Icon: SiReact, label: "React" },
     { Icon: SiPython, label: "Python" },
     { Icon: SiGooglecloud, label: "GCP" },
-    { Icon: SiMicrosoftazure, label: "Azure" },
+    { Icon: VscAzure, label: "Azure" },
   ];
 
   return (
@@ -155,6 +153,13 @@ const HeaderProfileComponent = ({
                   Descargar CV
                 </a>
               )}
+              <button
+                onClick={openMatchModal}
+                className="btn-primary flex items-center gap-2 animate-glow-pulse"
+              >
+                <HiOutlineSparkles size={20} />
+                ¿Hacemos Match?
+              </button>
             </MotionDiv>
 
             {/* Tech Stack Pills */}

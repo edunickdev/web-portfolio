@@ -3,6 +3,7 @@ import FooterComponent from "../shared/FooterComponent";
 import AboutMeScreen from "./AboutMeScreen";
 import KnowledgesScreen from "./KnowledgesScreen";
 import MyProjectsScreen from "./MyProjectsScreen";
+import RecruiterMatchModal from "../components/shared/RecruiterMatchModal";
 
 const HomeScreen = ({
   refs,
@@ -16,6 +17,7 @@ const HomeScreen = ({
       <MyProjectsScreen refs={refs} />
       <KnowledgesScreen refs={refs} />
       <FooterComponent />
+      <RecruiterMatchModal />
     </main>
   );
 };
